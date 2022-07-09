@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name">Pizza Con Amore</string>
+    <string name="welcome_tagline">Ресторанная кухня у вашего дома</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Deep Dweller</string>
+    <string name="nav_header_subtitle_email">misharozental@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="current_user">D D</string>
+    <string name="menu_home">Меню</string>
+    <string name="menu_favourites">Любимые блюда</string>
+    <string name="menu_">Slideshow</string>
+    //Интерфейс
+    <string name="app_title">Pizza Con Amore</string>
+    <string name="register">Регистрация</string>
+    <string name="sign_in">Войти</string>
+    <string name="full_name">Имя и Фамилия</string>
+    <string name="e_mail">e-mail адресс</string>
+    <string name="password">Пароль</string>
+    <string name="my_cart">Корзина</string>
+    <string name="admin_cabinet">Админка</string>
+    <string name="log_out">Выйти</string>
+
+
+    //Категории
+    <string name="category_pizza">"Пицца\u0020"</string>
+    <string name="category_focaccia">"Фокачча\u0020"</string>
+    <string name="category_pasta">Паста\u0020</string>
+    <string name="category_pies">Пироги\u0020</string>
+    <string name="category_cakes">Десерты\u0020</string>
+    <string name="category_hot_snacks">Горячие закуски\u0020</string>
+    <string name="category_test">Test\u0020</string>
+    <string name="category_lunch">Бизнес ланч\u0020</string>
+    <string name="category_drinks_hot">Горячие напитки\u0020</string>
+    <string name="category_drinks_cold">Охлажденные напитки\u0020</string>
+    <string name="category_drinks">Охлажденные напитки\u0020</string>
+    <string name="category_drinks1">Охлажденные напитки\u0020</string>
+    <string name="category_drinks2">Охлажденные напитки\u0020</string>
+
+    //Пиццы
+    <string name="pizza_fegato_di_pollo">Fegato di Pollo\u0020</string>
+    <string name="pizza_salmone_romano">Salmone Romano\u0020</string>
+    <string name="pizza_bianca_con_pera">Bianca con Pera\u0020</string>
+    <string name="pizza_quattro_formaggi">Quattro Formaggi\u0020</string>
+    <string name="pizza_diabola">Diabola\u0020</string>
+    <string name="pizza_napoletana">Napoletana\u0020</string>
+    <string name="pizza_chicken">Chicken\u0020</string>
+    <string name="pizza_four_seasons">Four Seasons\u0020</string>
+    <string name="pizza_caesar">Caesar\u0020</string>
+    <string name="pizza_con_amore">Con Amore\u0020</string>
+    <string name="pizza_salmone">Salmone\u0020</string>
+    <string name="pizza_hawaii">Hawaii\u0020</string>
+    <string name="pizza_margarita">Margarita\u0020</string>
+    <string name="pizza_toscana">Toscana\u0020</string>
+
+    //Ценники
+    <string name="pizza_fegato_di_pollo_pr">\u0020 450 ₽ \u0020</string>
+    <string name="pizza_salmone_romano_pr">\u0020 450 ₽ \u0020</string>
+    <string name="pizza_bianca_con_pera_pr">\u0020 450 ₽ \u0020</string>
+    <string name="pizza_quattro_formaggi_pr">\u0020 450 ₽ \u0020</string>
+    <string name="pizza_diabola_pr">\u0020 450 ₽ \u0020</string>
+    <string name="pizza_napoletana_pr">\u0020 450 ₽ \u0020</string>
+    <string name="pizza_chicken_pr">\u0020 450 ₽ \u0020</string>
+    <string name="pizza_four_seasons_pr">\u0020 450 ₽ \u0020</string>
+    <string name="pizza_caesar_pr">\u0020 450 ₽ \u0020</string>
+    <string name="pizza_con_amore_pr">\u0020 450 ₽ \u0020</string>
+    <string name="pizza_salmone_pr">\u0020 450 ₽ \u0020</string>
+    <string name="pizza_hawaii_pr">\u0020 450 ₽ \u0020</string>
+    <string name="pizza_margarita_pr">\u0020 450 ₽ \u0020</string>
+    <string name="pizza_toscana_pr">\u0020 450 ₽ \u0020</string>
+
+
+    //Масса
+    <string name="pizza_fegato_di_pollo_mass">\u0020 520 грамм \u0020</string>
+    <string name="pizza_salmone_romano_mass">\u0020 520 грамм \u0020</string>
+    <string name="pizza_bianca_con_pera_mass">\u0020 520 грамм \u0020</string>
+    <string name="pizza_quattro_formaggi_mass">\u0020 520 грамм \u0020</string>
+    <string name="pizza_diabola_mass">\u0020 520 грамм \u0020</string>
+    <string name="pizza_napoletana_mass">\u0020 520 грамм \u0020</string>
+    <string name="pizza_chicken_mass">\u0020 520 грамм \u0020</string>
+    <string name="pizza_four_seasons_mass">\u0020 520 грамм \u0020</string>
+    <string name="pizza_caesar_mass">\u0020 520 грамм \u0020</string>
+    <string name="pizza_con_amore_mass">\u0020 520 грамм \u0020</string>
+    <string name="pizza_salmone_mass">\u0020 520 грамм \u0020</string>
+    <string name="pizza_hawaii_mass">\u0020 520 грамм \u0020</string>
+    <string name="pizza_margarita_mass">\u0020 520 грамм \u0020</string>
+    <string name="pizza_toscana_mass">\u0020 520 грамм \u0020</string>
+</resources>

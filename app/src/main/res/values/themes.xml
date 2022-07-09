@@ -1,0 +1,66 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Pizza_Con_Amore" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_color1</item>
+        <item name="colorPrimaryVariant">@color/primary_color2</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.Pizza_Con_Amore.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <style name="all_text_field_formatting">
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textSize">64sp</item>
+        <item name="fontFamily">@font/caveat_medium</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="search_field_formatting">
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textSize">32sp</item>
+        <item name="fontFamily">@font/caveat_medium</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+
+    <style name="food_category_style">
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textSize">48sp</item>
+        <item name="fontFamily">@font/caveat_medium</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+
+    <style name="admin_style">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">32sp</item>
+        <item name="fontFamily">@font/caveat_medium</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_margin">5dp</item>
+    </style>
+
+    <style name="food_item_style">
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textSize">42sp</item>
+        <item name="fontFamily">@font/caveat_medium</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="Theme.Pizza_Con_Amore.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Pizza_Con_Amore.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

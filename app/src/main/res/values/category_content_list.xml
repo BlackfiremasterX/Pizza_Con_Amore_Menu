@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="category_img">
+       <item>@drawable/fimage_pizza</item>
+       <item>@drawable/fimage_focaccia_2</item>
+       <item>@drawable/fimage_hot_soup</item>
+       <item>@drawable/fimage_pasta</item>
+       <item>@drawable/fimage_hot_snacks</item>
+        <item>@drawable/fimage_hot_cofee</item>
+        <item>@drawable/fimage_soda_lemon</item>
+    </array>
+    <string-array name="category_name">
+        <item>@string/category_pizza</item>
+        <item>@string/category_focaccia</item>
+        <item>@string/category_lunch</item>
+        <item>@string/category_pasta</item>
+        <item>@string/category_hot_snacks</item>
+        <item>@string/category_drinks_hot</item>
+        <item>@string/category_drinks_cold</item>
+    </string-array>
+</resources>

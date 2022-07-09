@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/fimage_menu"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_active_category"
+            android:icon="@drawable/favorite_meal"
+            android:title="@string/menu_favourites" />
+        <item
+            android:id="@+id/nav_admin"
+            android:icon="@drawable/fimage_shopping_bag"
+            android:title="@string/admin_cabinet" />
+<!--        <item-->
+<!--            android:id="@+id/nav_category_pasta"-->
+<!--            android:icon="@drawable/ic_menu_slideshow"-->
+<!--            android:title="@string/category_pasta" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_category_pies"-->
+<!--            android:icon="@drawable/ic_menu_slideshow"-->
+<!--            android:title="@string/category_pies" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_scategory_cakes"-->
+<!--            android:icon="@drawable/ic_menu_slideshow"-->
+<!--            android:title="@string/category_cakes" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_scategory_lunch"-->
+<!--            android:icon="@drawable/ic_menu_slideshow"-->
+<!--            android:title="@string/category_lunch" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_category_drinks_hot"-->
+<!--            android:icon="@drawable/ic_menu_slideshow"-->
+<!--            android:title="@string/category_drinks_hot" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_category_drinks_cold"-->
+<!--            android:icon="@drawable/ic_menu_slideshow"-->
+<!--            android:title="@string/category_drinks_cold" />-->
+
+
+    </group>
+</menu>

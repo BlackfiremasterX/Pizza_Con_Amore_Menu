@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="pizza_img">
+        <item>@drawable/bg_pizza_steam</item>
+        <item>@drawable/bg_pizza_steam</item>
+        <item>@drawable/bg_pizza_steam</item>
+        <item>@drawable/bg_pizza_steam</item>
+        <item>@drawable/bg_pizza_steam</item>
+        <item>@drawable/bg_pizza_steam</item>
+        <item>@drawable/bg_pizza_steam</item>
+        <item>@drawable/bg_pizza_steam</item>
+        <item>@drawable/bg_pizza_steam</item>
+        <item>@drawable/bg_pizza_steam</item>
+        <item>@drawable/bg_pizza_steam</item>
+        <item>@drawable/bg_pizza_steam</item>
+        <item>@drawable/bg_pizza_steam</item>
+        <item>@drawable/bg_pizza_steam</item>
+    </array>
+    <string-array name="pizza_name">
+        <item>@string/pizza_fegato_di_pollo</item>
+        <item>@string/pizza_salmone_romano</item>
+        <item>@string/pizza_bianca_con_pera</item>
+        <item>@string/pizza_quattro_formaggi</item>
+        <item>@string/pizza_diabola</item>
+        <item>@string/pizza_napoletana</item>
+        <item>@string/pizza_chicken</item>
+        <item>@string/pizza_four_seasons</item>
+        <item>@string/pizza_caesar</item>
+        <item>@string/pizza_con_amore</item>
+        <item>@string/pizza_salmone</item>
+        <item>@string/pizza_hawaii</item>
+        <item>@string/pizza_margarita</item>
+        <item>@string/pizza_toscana</item>
+    </string-array>
+
+    <string-array name="pizza_price">
+        <item>@string/pizza_fegato_di_pollo_pr</item>
+        <item>@string/pizza_salmone_romano_pr</item>
+        <item>@string/pizza_bianca_con_pera_pr</item>
+        <item>@string/pizza_quattro_formaggi_pr</item>
+        <item>@string/pizza_diabola_pr</item>
+        <item>@string/pizza_napoletana_pr</item>
+        <item>@string/pizza_chicken_pr</item>
+        <item>@string/pizza_four_seasons_pr</item>
+        <item>@string/pizza_caesar_pr</item>
+        <item>@string/pizza_con_amore_pr</item>
+        <item>@string/pizza_salmone_pr</item>
+        <item>@string/pizza_hawaii_pr</item>
+        <item>@string/pizza_margarita_pr</item>
+        <item>@string/pizza_toscana_pr</item>
+    </string-array>
+
+    <string-array name="pizza_mass">
+        <item>@string/pizza_fegato_di_pollo_mass</item>
+        <item>@string/pizza_salmone_romano_mass</item>
+        <item>@string/pizza_bianca_con_pera_mass</item>
+        <item>@string/pizza_quattro_formaggi_mass</item>
+        <item>@string/pizza_diabola_mass</item>
+        <item>@string/pizza_napoletana_mass</item>
+        <item>@string/pizza_chicken_mass</item>
+        <item>@string/pizza_four_seasons_mass</item>
+        <item>@string/pizza_caesar_mass</item>
+        <item>@string/pizza_con_amore_mass</item>
+        <item>@string/pizza_salmone_mass</item>
+        <item>@string/pizza_hawaii_mass</item>
+        <item>@string/pizza_margarita_mass</item>
+        <item>@string/pizza_toscana_mass</item>
+    </string-array>
+
+
+</resources>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1050900827252",
+    "firebase_url": "https://pizza-con-amore-base-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "pizza-con-amore-base",
+    "storage_bucket": "pizza-con-amore-base.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050900827252:android:61453b200a06d28b5a5521",
+        "android_client_info": {
+          "package_name": "com.example.pizza_con_amore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1050900827252-c4edbgl92ncibqkf6sr8knksi3a8krb6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqE2_oqPGJQW8cETKtnqAFM1vb2U7b81w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1050900827252-c4edbgl92ncibqkf6sr8knksi3a8krb6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
