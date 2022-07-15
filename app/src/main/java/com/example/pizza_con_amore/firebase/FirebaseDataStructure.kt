@@ -19,12 +19,12 @@ class FirebaseDataStructure {
     )
 
     data class FoodData(
-        val foodId: Int? = null,
+        val foodId: String? = null,
         val foodName: String? = null,
         val foodPrice: String? = null,
         val foodMass: String? = null,
         val foodDescription: String? = null,
-        val foodIngredientList: Array<String>? = null,
+        val foodIngredientList: String? = null,
         val foodCategory: String? = null,
         val foodImageLink: String? = null
     )
@@ -35,15 +35,6 @@ class FirebaseDataStructure {
         val ingredientImageLink: String? = null,
         val ingredientFoodList: Array<String>? = null
     )
-
-    data class CategoryData_fromDB(
-        val categoryTitle: String? = null,
-        val categoryImageLink: String? = null
-    ) {
-        fun categoryImageLink(toString: String) {
-
-        }
-    }
 
 
 }

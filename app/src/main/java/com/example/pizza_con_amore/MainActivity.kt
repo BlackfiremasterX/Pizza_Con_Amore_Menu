@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -45,7 +46,6 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         val drawerLayout: DrawerLayout = binding.mainDrawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
-
 
 
         navView.itemIconTintList = null

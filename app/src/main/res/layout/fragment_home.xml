@@ -77,7 +77,7 @@
                 app:cardCornerRadius="45dp">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/home_food_scroller"
+                    android:id="@+id/category_scroller"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/primary_color3"

@@ -29,7 +29,6 @@ class FoodItemDetailsFragment : Fragment() {
         _binding = FragmentFoodItemDetailsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.restrauntMenu
 
         return root
     }
