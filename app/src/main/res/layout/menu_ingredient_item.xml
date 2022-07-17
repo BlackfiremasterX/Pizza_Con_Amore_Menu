@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/food_category_item_card"
+    android:id="@+id/ingredient_item_card"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:padding="2dp"
@@ -25,7 +25,7 @@
 
 
             <TextView
-                android:id="@+id/ingredient_food_text"
+                android:id="@+id/ingredient_text"
                 style="@style/food_item_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -37,11 +37,11 @@
                 android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/cardView2"
-                app:layout_constraintStart_toEndOf="@id/ingredient_food_img"
+                app:layout_constraintStart_toEndOf="@id/ingredient_img"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/ingredient_food_img"
+                android:id="@+id/ingredient_img"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_marginStart="10dp"
@@ -64,11 +64,11 @@
                 app:cardCornerRadius="100dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/ingredient_food_text"
+                app:layout_constraintStart_toEndOf="@+id/ingredient_text"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/food_item_price"
+                    android:id="@+id/ingredient_mass"
                     style="@style/food_item_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

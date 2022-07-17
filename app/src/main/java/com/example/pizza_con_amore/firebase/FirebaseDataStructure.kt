@@ -1,6 +1,11 @@
 package com.example.pizza_con_amore.firebase
 
 class FirebaseDataStructure {
+    data class ActiveCategory(
+        val activeCategory: String? = null
+    )
+
+
     data class UserData(
         val userId: Int? = null,
         val userNickname: String? = null,
@@ -30,10 +35,12 @@ class FirebaseDataStructure {
     )
 
     data class IngredientsData(
-        val ingredientId: Int? = null,
+        val ingredientId: String? = null,
         val ingredientName: String? = null,
-        val ingredientImageLink: String? = null,
-        val ingredientFoodList: Array<String>? = null
+        val ingredientPrice: String? = null,
+        val ingredientMass: String? = null,
+        val ingredientFoodList: String? = null,
+        val ingredientImageLink: String? = null
     )
 
 

@@ -342,7 +342,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:hint="Тестируется"
+                    android:hint="В какой еде есть?"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/ingredientMass"
+                    style="@style/admin_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:hint="Масса ингридиента"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/ingredientPrice"
+                    style="@style/admin_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:hint="Цена ингредиента на 100грамм"
                     android:textColor="@color/black" />
 
 

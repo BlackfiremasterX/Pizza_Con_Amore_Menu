@@ -8,6 +8,7 @@ import android.widget.Toast
 import com.example.pizza_con_amore.NODE_CATEGORIES
 import com.example.pizza_con_amore.databinding.FragmentAdminAddUpdateBinding
 import com.example.pizza_con_amore.firebase.FirebaseDataStructure
+import com.example.pizza_con_amore.firebase.FirebaseDataStructure.IngredientsData
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -78,6 +79,26 @@ class AdminAddUpdateFragment : HomeFragment() {
                             binding.foodImageLink.text.clear()
                             Toast.makeText(context,"Успешно сохранено",Toast.LENGTH_SHORT).show()
 
+                        }.addOnFailureListener()
+                        {
+                            Toast.makeText(context,"Сохранение в говне!",Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                    addIngredient.setOnClickListener {
+
+                        val ingredientId = ingredientId.text.toString()
+                        val ingredientName = ingredientName.text.toString()
+                        val ingredientPrice = ingredientPrice.text.toString()
+                        val ingredientMass = ingredientMass.text.toString()
+                        val ingredientFoodList = ingredientFoodList.text.toString()
+                        val ingredientImageLink = ingredientImageLink.text.toString()
+
+
+                        pca_base = FirebaseDatabase.getInstance().getReference("$NODE_CATEGORIES/02_pizza/02_pizza_list/01_fegato/foodIngredientList")
+                        val ingredient = IngredientsData(ingredientId,ingredientName,ingredientPrice,ingredientMass,ingredientFoodList,ingredientImageLink)
+                        pca_base.child(ingredientName).setValue(ingredient).addOnSuccessListener {
+                            Toast.makeText(context,"Успешно сохранено",Toast.LENGTH_SHORT).show()
                         }.addOnFailureListener()
                         {
                             Toast.makeText(context,"Сохранение в говне!",Toast.LENGTH_SHORT).show()

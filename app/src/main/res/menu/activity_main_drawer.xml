@@ -16,7 +16,15 @@
             android:id="@+id/nav_admin"
             android:icon="@drawable/fimage_shopping_bag"
             android:title="@string/admin_cabinet" />
-<!--        <item-->
+        <item
+            android:id="@+id/nav_pizza"
+            android:icon="@drawable/fimage_pizza"
+            android:title="@string/category_pizza" />
+        <item
+            android:id="@+id/nav_breakfast"
+            android:icon="@drawable/favorite_star"
+            android:title="Завтраки" />
+        <!--        <item-->
 <!--            android:id="@+id/nav_category_pasta"-->
 <!--            android:icon="@drawable/ic_menu_slideshow"-->
 <!--            android:title="@string/category_pasta" />-->

@@ -7,17 +7,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.pizza_con_amore.MainActivity
 import com.example.pizza_con_amore.R
-import com.example.pizza_con_amore.databinding.MenuFoodCategoryItemBinding
 import com.example.pizza_con_amore.databinding.MenuFoodItemBinding
-import com.example.pizza_con_amore.firebase.FirebaseDataStructure
+import com.example.pizza_con_amore.firebase.FirebaseDataStructure.FoodData
 import com.example.pizza_con_amore.ui.FoodItemDetailsFragment
 
 
-class DB_FoodAdapter(private val foodList: ArrayList<FirebaseDataStructure.FoodData>, context: Context) :
-    RecyclerView.Adapter<DB_FoodAdapter.FoodHolder>() {
+class FoodAdapter(private val foodList: ArrayList<FoodData>, context: Context) :
+    RecyclerView.Adapter<FoodAdapter.FoodHolder>() {
     private var contextFood = context
 
 
@@ -53,23 +54,21 @@ class DB_FoodAdapter(private val foodList: ArrayList<FirebaseDataStructure.FoodD
 
     class FoodHolder(foodItem: View): RecyclerView.ViewHolder(foodItem) {
         val binding = MenuFoodItemBinding.bind(foodItem)
-        fun bind(foodItem: FirebaseDataStructure.FoodData, context: Context) = with(binding)
+        fun bind(foodItem: FoodData, context: Context) = with(binding)
         {
             foodItemCard.setOnClickListener(){
                 Toast.makeText(context,"Нажато: ${foodItemTitle.text}", Toast.LENGTH_SHORT).show()
+               // val intent_to_food_details = Intent(context, FoodItemDetailsFragment::class.java).apply {
+//                    putExtra("title",foodItemTitle.text.toString())
+//                    putExtra("price",foodItemPrice.text.toString())
+//                    putExtra("mass",foodItemMass.text.toString())
+//                    putExtra("mass",foodItemMass.text.toString())
+//                    putExtra("mass",foodItemMass.text.toString())
+//                    putExtra("mass",foodItemMass.text.toString())
+                }
+               // context.startActivity(intent_to_food_details)
             }
 
-            foodItemCard.setOnClickListener(){
-                val intent_to_food_details = Intent(context, FoodItemDetailsFragment::class.java).apply {
-                    putExtra("title",foodItemTitle.text.toString())
-                    putExtra("price",foodItemPrice.text.toString())
-                    putExtra("mass",foodItemMass.text.toString())
-                    putExtra("mass",foodItemMass.text.toString())
-                    putExtra("mass",foodItemMass.text.toString())
-                    putExtra("mass",foodItemMass.text.toString())
-                }
-                context.startActivity(intent_to_food_details)
-            }
+
         }
     }
-}

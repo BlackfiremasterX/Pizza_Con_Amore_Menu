@@ -1,33 +1,28 @@
 package com.example.pizza_con_amore.ui
 
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.pizza_con_amore.NODE_CATEGORIES
+import com.example.pizza_con_amore.*
 import com.example.pizza_con_amore.R
-import com.example.pizza_con_amore.categoryArrayList
 import com.example.pizza_con_amore.databinding.FragmentHomeBinding
-import com.example.pizza_con_amore.firebase.FirebaseDataStructure
-import com.example.pizza_con_amore.firebase.adapter.DB_CategoryAdapter
-import com.example.pizza_con_amore.firebase.adapter.DB_FoodAdapter
-
+import com.example.pizza_con_amore.firebase.FirebaseDataStructure.*
+import com.example.pizza_con_amore.firebase.adapter.CategoryAdapter
+import com.example.pizza_con_amore.firebase.adapter.CategoryAdapter.c_Listener
 import com.google.firebase.database.*
 
 
-open class HomeFragment : Fragment() {
+open class HomeFragment : Fragment(), c_Listener {
     private var _binding: FragmentHomeBinding? = null
-    var menuItemAdapter: DB_FoodAdapter? = null
-
-
     lateinit var pca_base: DatabaseReference
     lateinit var categoryRV: RecyclerView
     private val binding get() = _binding!!
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,9 +36,8 @@ open class HomeFragment : Fragment() {
         binding.apply {
 
             categoryRV = categoryScroller
-            categoryRV.layoutManager =
-                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            categoryArrayList = arrayListOf<FirebaseDataStructure.CategoryData>()
+            categoryRV.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            categoryArrayList = arrayListOf<CategoryData>()
             getCategoryData()
         }
         return root
@@ -56,11 +50,11 @@ open class HomeFragment : Fragment() {
                 categoryArrayList.clear()
                 if (snapshot.exists()) {
                     for (categorySnapsot in snapshot.children) {
-                        val category =
-                            categorySnapsot.getValue(FirebaseDataStructure.CategoryData::class.java)
+                        val category = categorySnapsot.getValue(CategoryData::class.java)
                         categoryArrayList.add(category!!)
                     }
-                    categoryRV.adapter = activity?.let { DB_CategoryAdapter(categoryArrayList, it) }
+                    categoryRV.adapter = CategoryAdapter(this@HomeFragment, categoryArrayList)
+                   // categoryRV.adapter = activity?.let { CategoryAdapter(categoryArrayList, it) }
                 }
             }
 
@@ -69,13 +63,10 @@ open class HomeFragment : Fragment() {
             }
         })
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
-
     private fun openSubFragment(whatFragment: Fragment, whereToHold: Int) {
         activity!!.supportFragmentManager.beginTransaction()
             .replace(whereToHold, whatFragment, "findFragment")
@@ -87,5 +78,39 @@ open class HomeFragment : Fragment() {
         @JvmStatic
         fun newInstance() = HomeFragment()
     }
+
+    override fun onClick(category: CategoryData) {
+
+        when (category.categoryName) {
+            "01_breakfast" -> ACTIVE_CATEGORY = BREAKFAST
+            "02_pizza" -> ACTIVE_CATEGORY = PIZZA
+            "03_focaccia" -> ACTIVE_CATEGORY = FOCACCIA
+            "04_lunch" -> ACTIVE_CATEGORY = LUNCH
+            "05_pasta" -> ACTIVE_CATEGORY = PASTA
+            "06_hot_snacks" -> ACTIVE_CATEGORY = HOT_SNACKS
+            "07_salad" -> ACTIVE_CATEGORY = SALAD
+            "08_raviolli" -> ACTIVE_CATEGORY = RAVIOLLI
+            "09_hot_meal" -> ACTIVE_CATEGORY = HOT_MEAL
+            "10_ice_cream" -> ACTIVE_CATEGORY = ICE_CREAM
+            "11_milkshakes" -> ACTIVE_CATEGORY = MILKSHAKE
+            "12_hot_drinks" -> ACTIVE_CATEGORY = HOT_DRINKS
+            "13_cold_drinks" -> ACTIVE_CATEGORY = COLD_DRINKS
+            "14_freezing" -> ACTIVE_CATEGORY = COLD_DRINKS
+            else -> ACTIVE_CATEGORY = ACTIVE_CATEGORY
+        }
+
+        pca_base = FirebaseDatabase.getInstance().reference
+        pca_base.child(ACTIVE).setValue(ACTIVE_CATEGORY).addOnSuccessListener {
+            Toast.makeText(context, ACTIVE_CATEGORY,Toast.LENGTH_SHORT).show()
+        }.addOnFailureListener()
+        {
+            Toast.makeText(context,"Сохранение в говне!",Toast.LENGTH_SHORT).show()
+        }
+
+        //parentFragmentManager.beginTransaction().detach(this).commit ()
+     //parentFragmentManager.beginTransaction().attach(this).commit ()}
+        //Toast.makeText(context, ACTIVE_CATEGORY, Toast.LENGTH_SHORT).show()
+    }
+
 
 }

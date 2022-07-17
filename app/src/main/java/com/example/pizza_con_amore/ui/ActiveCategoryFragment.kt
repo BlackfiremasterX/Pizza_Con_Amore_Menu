@@ -4,15 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.pizza_con_amore.ACTIVE_CATEGORY
-import com.example.pizza_con_amore.NODE_CATEGORIES
+import com.example.pizza_con_amore.*
 import com.example.pizza_con_amore.databinding.FragmentActiveCategoryBinding
-import com.example.pizza_con_amore.firebase.FirebaseDataStructure
-import com.example.pizza_con_amore.firebase.adapter.DB_CategoryAdapter
-import com.example.pizza_con_amore.firebase.adapter.DB_FoodAdapter
-import com.example.pizza_con_amore.foodArrayList
+import com.example.pizza_con_amore.firebase.FirebaseDataStructure.*
+import com.example.pizza_con_amore.firebase.adapter.CategoryAdapter
+import com.example.pizza_con_amore.firebase.adapter.FoodAdapter
 import com.google.firebase.database.*
 
 
@@ -21,6 +20,7 @@ open class ActiveCategoryFragment : HomeFragment() {
     lateinit var foodRV: RecyclerView
     private var _binding: FragmentActiveCategoryBinding? = null
     private val binding get() = _binding!!
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,33 +35,49 @@ open class ActiveCategoryFragment : HomeFragment() {
         binding.apply {
             foodRV = mainFoodScroll
             foodRV.layoutManager = GridLayoutManager(context, 2)
-            foodArrayList = arrayListOf<FirebaseDataStructure.FoodData>()
-            getFoodData(ACTIVE_CATEGORY)
+            foodArrayList = arrayListOf<FoodData>()
+            onClick(CategoryData())
         }
         return root
     }
-    private fun getFoodData(category: String) {
-        pca_base = FirebaseDatabase.getInstance().getReference("$NODE_CATEGORIES/$category/${category}_list")
-        pca_base.addValueEventListener(object : ValueEventListener {
+
+
+    private fun getFoodData() {
+
+
+        pca_base = categories_dynamic_ref
+        var getData = object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 foodArrayList.clear()
                 if (snapshot.exists()) {
                     for (foodSnapsot in snapshot.children) {
-                        val food = foodSnapsot.getValue(FirebaseDataStructure.FoodData::class.java)
-                        food?.let { foodArrayList.add(it) }
+                        val food = foodSnapsot.getValue(FoodData::class.java)
+                        foodArrayList.add(food!!) //food?.let { foodArrayList.add(it) }
                     }
-                    foodRV.adapter = activity?.let { DB_FoodAdapter(foodArrayList, it) }
+                    foodRV.adapter = FoodAdapter(foodArrayList, context!!)
+                Toast.makeText(context,"Успешно обновлено",Toast.LENGTH_SHORT).show()
                 }
             }
+
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                Toast.makeText(context,"Обновление в говне",Toast.LENGTH_SHORT).show()
+
             }
-        })
+        }
+        pca_base.addValueEventListener(getData)
+        pca_base.addListenerForSingleValueEvent(getData)
     }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+    override fun onClick(category: CategoryData) {
+        getFoodData()
+
+        super.onClick(category)
+    }
+
 
     companion object {
         @JvmStatic

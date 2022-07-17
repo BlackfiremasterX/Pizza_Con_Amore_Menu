@@ -6,21 +6,23 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.pizza_con_amore.databinding.ActivityMainBinding
-
+import com.example.pizza_con_amore.firebase.FirebaseDataStructure.*
+import com.example.pizza_con_amore.firebase.adapter.CategoryAdapter
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.database.DatabaseReference
 
 
-class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener,CategoryAdapter.c_Listener {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
@@ -72,6 +74,8 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
+    override fun onClick(category: CategoryData) {
 
 
-}
+      }
+    }
