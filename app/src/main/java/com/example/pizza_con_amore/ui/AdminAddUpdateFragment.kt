@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.example.pizza_con_amore.INGREDIENT_PATH
 import com.example.pizza_con_amore.NODE_CATEGORIES
 import com.example.pizza_con_amore.databinding.FragmentAdminAddUpdateBinding
 import com.example.pizza_con_amore.firebase.FirebaseDataStructure
@@ -69,14 +70,14 @@ class AdminAddUpdateFragment : HomeFragment() {
                         pca_base = FirebaseDatabase.getInstance().getReference("$NODE_CATEGORIES/$foodCategory/${foodCategory}_list")
                         val food = FirebaseDataStructure.FoodData(foodId,foodName,foodPrice,foodMass,foodDescription,foodIngredientList,foodCategory,foodImageLink)
                         pca_base.child(foodId).setValue(food).addOnSuccessListener {
-                            binding.foodId.text.clear()
-                            binding.foodName.text.clear()
-                            binding.foodPrice.text.clear()
-                            binding.foodMass.text.clear()
-                            binding.foodDescription.text.clear()
-                            binding.foodIngredientList.text.clear()
-                            binding.foodCategory.text.clear()
-                            binding.foodImageLink.text.clear()
+//                            binding.foodId.text.clear()
+//                            binding.foodName.text.clear()
+//                            binding.foodPrice.text.clear()
+//                            binding.foodMass.text.clear()
+//                            binding.foodDescription.text.clear()
+//                            binding.foodIngredientList.text.clear()
+//                            binding.foodCategory.text.clear()
+//                            binding.foodImageLink.text.clear()
                             Toast.makeText(context,"Успешно сохранено",Toast.LENGTH_SHORT).show()
 
                         }.addOnFailureListener()
@@ -93,11 +94,9 @@ class AdminAddUpdateFragment : HomeFragment() {
                         val ingredientMass = ingredientMass.text.toString()
                         val ingredientFoodList = ingredientFoodList.text.toString()
                         val ingredientImageLink = ingredientImageLink.text.toString()
-
-
-                        pca_base = FirebaseDatabase.getInstance().getReference("$NODE_CATEGORIES/02_pizza/02_pizza_list/01_fegato/foodIngredientList")
+                        pca_base = FirebaseDatabase.getInstance().getReference(INGREDIENT_PATH)
                         val ingredient = IngredientsData(ingredientId,ingredientName,ingredientPrice,ingredientMass,ingredientFoodList,ingredientImageLink)
-                        pca_base.child(ingredientName).setValue(ingredient).addOnSuccessListener {
+                        pca_base.child(ingredientId).setValue(ingredient).addOnSuccessListener {
                             Toast.makeText(context,"Успешно сохранено",Toast.LENGTH_SHORT).show()
                         }.addOnFailureListener()
                         {

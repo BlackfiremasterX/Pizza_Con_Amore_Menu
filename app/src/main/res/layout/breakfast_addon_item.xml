@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/food_item_card"
+    android:id="@+id/addon_item_card"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
@@ -11,19 +11,24 @@
 
     <androidx.cardview.widget.CardView
 
-        android:layout_width="700dp"
-        android:layout_height="350dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_gravity="center"
         android:orientation="horizontal"
+        app:cardBackgroundColor="@color/admin_add"
         app:cardCornerRadius="45dp">
 
 
         <ImageView
-            android:id="@+id/food_item_img"
+            android:layout_marginTop="14dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:id="@+id/addon_item_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            android:src="@drawable/bg_pizza_steam" />
+            android:layout_gravity="center"
+            android:src="@drawable/favorite_star" />
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -32,14 +37,14 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="0.6"
+                android:alpha="0.7"
                 android:elevation="5dp"
                 app:cardCornerRadius="100dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
 
                 <TextView
-                    android:id="@+id/food_item_price"
+                    android:id="@+id/addon_item_price"
                     style="@style/food_item_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -50,6 +55,7 @@
                     android:text="\u0020 450 ₽ \u0020"
                     android:textAlignment="center"
                     android:textColor="@color/black"
+                    android:textSize="42sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" />
             </androidx.cardview.widget.CardView>
@@ -57,14 +63,14 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="0.6"
+                android:alpha="0.7"
                 android:elevation="5dp"
                 app:cardCornerRadius="100dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
                 <TextView
-                    android:id="@+id/food_item_mass"
+                    android:id="@+id/addon_item_mass"
                     style="@style/food_item_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -74,7 +80,8 @@
                     android:maxLines="2"
                     android:text="\u0020 520 грамм \u0020"
                     android:textAlignment="center"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:textSize="42sp" />
 
 
             </androidx.cardview.widget.CardView>
@@ -85,26 +92,26 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:alpha="0.7"
             android:background="@color/primary_color1"
-            android:alpha="0.6"
             android:elevation="5dp">
 
             <TextView
-                android:id="@+id/food_item_title"
+                android:id="@+id/addon_item_title"
                 style="@style/food_item_style"
-                android:textSize="60sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
                 android:gravity="center"
                 android:maxEms="10"
                 android:maxLines="2"
                 android:text="@string/pizza_fegato_di_pollo"
                 android:textAlignment="center"
-                android:textColor="@color/black" />
-
-
+                android:textColor="@color/black"
+                android:textSize="48sp" />
 
 
         </androidx.cardview.widget.CardView>

@@ -1,4 +1,4 @@
-package com.example.pizza_con_amore.ui
+package com.example.pizza_con_amore.ui.category_fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,10 +11,11 @@ import com.example.pizza_con_amore.*
 import com.example.pizza_con_amore.databinding.FragmentActiveCategoryBinding
 import com.example.pizza_con_amore.firebase.FirebaseDataStructure.*
 import com.example.pizza_con_amore.firebase.adapter.FoodAdapter
+import com.example.pizza_con_amore.ui.HomeFragment
 import com.google.firebase.database.*
 
 
-open class ActiveCategoryFragment : HomeFragment() {
+open class ColdDrinksFragment : HomeFragment() {
 
     lateinit var foodRV: RecyclerView
     lateinit var food_adapter:FoodAdapter
@@ -89,7 +90,7 @@ open class ActiveCategoryFragment : HomeFragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() = ActiveCategoryFragment()
+        fun newInstance() = ColdDrinksFragment()
     }
 
 }

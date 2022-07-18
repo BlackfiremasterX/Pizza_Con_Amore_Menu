@@ -43,6 +43,14 @@ class FirebaseDataStructure {
         val ingredientImageLink: String? = null
     )
 
+    data class AddonsData(
+        val addonId: String? = null,
+        val addonName: String? = null,
+        val addonPrice: String? = null,
+        val addonMass: String? = null,
+        val addonImageLink: String? = null
+    )
+
 
 }
 

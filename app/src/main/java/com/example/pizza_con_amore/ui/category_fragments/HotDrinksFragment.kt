@@ -1,4 +1,4 @@
-package com.example.pizza_con_amore.ui
+package com.example.pizza_con_amore.ui.category_fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,19 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pizza_con_amore.*
-import com.example.pizza_con_amore.databinding.FragmentActiveCategoryBinding
+import com.example.pizza_con_amore.databinding.IndividualHotDrinksFragmentBinding
 import com.example.pizza_con_amore.firebase.FirebaseDataStructure.*
+import com.example.pizza_con_amore.firebase.adapter.DrinksAdapter
 import com.example.pizza_con_amore.firebase.adapter.FoodAdapter
+import com.example.pizza_con_amore.ui.HomeFragment
 import com.google.firebase.database.*
 
 
-open class ActiveCategoryFragment : HomeFragment() {
+open class HotDrinksFragment : HomeFragment() {
 
-    lateinit var foodRV: RecyclerView
-    lateinit var food_adapter:FoodAdapter
-    private var _binding: FragmentActiveCategoryBinding? = null
+    lateinit var drinksRV: RecyclerView
+    lateinit var drinks_adapter:DrinksAdapter
+    private var _binding: IndividualHotDrinksFragmentBinding? = null
     private val binding get() = _binding!!
 
 
@@ -29,15 +32,15 @@ open class ActiveCategoryFragment : HomeFragment() {
     ): View {
 
 
-        _binding = FragmentActiveCategoryBinding.inflate(inflater, container, false)
+        _binding = IndividualHotDrinksFragmentBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         binding.apply {
-            foodRV = mainFoodScroll
-            foodRV.layoutManager = GridLayoutManager(context, 2)
+            drinksRV = coffeeScroller
+            drinksRV.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
             foodArrayList = arrayListOf<FoodData>()
-            food_adapter = FoodAdapter(foodArrayList,context!!)
+            drinks_adapter = DrinksAdapter(foodArrayList,context!!)
             onClick(CategoryData())
 
 
@@ -61,8 +64,8 @@ open class ActiveCategoryFragment : HomeFragment() {
                                 println(e.message)
                                 println(foodSnapsot.value)
                             }}
-                        foodRV.adapter = FoodAdapter(foodArrayList, context!!)
-                        //Toast.makeText(context,"Успешно обновлено",Toast.LENGTH_SHORT).show()
+                        drinksRV.adapter = FoodAdapter(foodArrayList, context!!)
+                       // Toast.makeText(context,"Успешно обновлено",Toast.LENGTH_SHORT).show()
                     }
                 }
 
@@ -81,15 +84,15 @@ open class ActiveCategoryFragment : HomeFragment() {
 
     override fun onClick(category: CategoryData) {
         getFoodData()
-        food_adapter.notifyDataSetChanged()
-        foodRV = binding.mainFoodScroll
+        drinks_adapter.notifyDataSetChanged()
+        drinksRV = binding.coffeeScroller
         super.onClick(category)
     }
 
 
     companion object {
         @JvmStatic
-        fun newInstance() = ActiveCategoryFragment()
+        fun newInstance() = HotDrinksFragment()
     }
 
 }

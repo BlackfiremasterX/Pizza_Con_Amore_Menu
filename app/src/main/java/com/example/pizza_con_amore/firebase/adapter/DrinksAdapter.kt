@@ -17,18 +17,18 @@ import com.example.pizza_con_amore.firebase.FirebaseDataStructure.FoodData
 import com.example.pizza_con_amore.ui.FoodItemDetailsFragment
 
 
-class FoodAdapter(private val foodList: ArrayList<FoodData>, context: Context) :
-    RecyclerView.Adapter<FoodAdapter.FoodHolder>() {
+class DrinksAdapter(private val foodList: ArrayList<FoodData>, context: Context) :
+    RecyclerView.Adapter<DrinksAdapter.DrinksHolder>() {
     private var contextFood = context
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DrinksHolder {
         val foodItemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.menu_food_item, parent, false)
-        return FoodHolder(foodItemView)
+            .inflate(R.layout.drinks_item, parent, false)
+        return DrinksHolder(foodItemView)
     }
 
-    override fun onBindViewHolder(holder: FoodHolder, position: Int) {
+    override fun onBindViewHolder(holder: DrinksHolder, position: Int) {
         val currentItem = foodList[position]
         holder.binding.foodItemTitle.text = currentItem.foodName + "\u0020"
         holder.binding.foodItemMass.text ="\u0020" + currentItem.foodMass + "\u0020"
@@ -52,7 +52,7 @@ class FoodAdapter(private val foodList: ArrayList<FoodData>, context: Context) :
     }
 
 
-    class FoodHolder(foodItem: View): RecyclerView.ViewHolder(foodItem) {
+    class DrinksHolder(foodItem: View): RecyclerView.ViewHolder(foodItem) {
         val binding = MenuFoodItemBinding.bind(foodItem)
         fun bind(foodItem: FoodData, context: Context) = with(binding)
         {

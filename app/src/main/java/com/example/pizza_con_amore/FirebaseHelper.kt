@@ -1,5 +1,6 @@
 package com.example.pizza_con_amore
 
+import androidx.lifecycle.MutableLiveData
 import com.example.pizza_con_amore.firebase.FirebaseDataStructure
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -9,16 +10,16 @@ var categoryBuffer = mutableMapOf<Int,String>()
 
 //Сет списков
 lateinit var foodArrayList: ArrayList<FirebaseDataStructure.FoodData>
+lateinit var coffeeArrayList: ArrayList<FirebaseDataStructure.FoodData>
+lateinit var teaArrayList: ArrayList<FirebaseDataStructure.FoodData>
 lateinit var categoryArrayList: ArrayList<FirebaseDataStructure.CategoryData>
 lateinit var ingredientArrayList: ArrayList<FirebaseDataStructure.IngredientsData>
-
-
-
-
-
+lateinit var addonsArrayList: ArrayList<FirebaseDataStructure.AddonsData>
 
 //Константы
 const val NODE_CATEGORIES = "Category"
+const val NODE_ADDONS = "Addons"
+const val INGREDIENT_PATH = "Ingredients"
 const val ACTIVE = "Active"
 const val CATEGORY_ID = "categoryId"
 const val CATEGORY_NAME = "categoryName"
@@ -43,20 +44,14 @@ const val FREEZING = "14_freezing"
 
 const val DEFAULT_FOOD_ITEM = "01_fegato"
 
-
-
-
-
-
-
 //Операнды
 lateinit var REF_PCA_BASE_ROOT: DatabaseReference
-var ACTIVE_CATEGORY: String = BREAKFAST
+var ACTIVE_CATEGORY: String = PIZZA
 var CURRENT_FOOD_ITEM: String = DEFAULT_FOOD_ITEM
+val livedata = MutableLiveData(BREAKFAST)
 
-
-var categories_dynamic_ref =  FirebaseDatabase.getInstance().reference.child(NODE_CATEGORIES).child(ACTIVE_CATEGORY).child(ACTIVE_CATEGORY + "_list")
-
+fun getCategoryRef(category: String) = FirebaseDatabase.getInstance().reference.child(NODE_CATEGORIES).child(category).child(category + "_list")
+fun getAddonRef(addons: String) = FirebaseDatabase.getInstance().reference.child(NODE_ADDONS)
 
 
 fun openReference(path:String)

@@ -15,6 +15,10 @@ import com.example.pizza_con_amore.databinding.FragmentHomeBinding
 import com.example.pizza_con_amore.firebase.FirebaseDataStructure.*
 import com.example.pizza_con_amore.firebase.adapter.CategoryAdapter
 import com.example.pizza_con_amore.firebase.adapter.CategoryAdapter.c_Listener
+import com.example.pizza_con_amore.ui.category_fragments.BreakfastFragment
+import com.example.pizza_con_amore.ui.category_fragments.ColdDrinksFragment
+import com.example.pizza_con_amore.ui.category_fragments.HotDrinksFragment
+import com.example.pizza_con_amore.ui.category_fragments.LunchFragment
 import com.google.firebase.database.*
 
 
@@ -82,26 +86,54 @@ open class HomeFragment : Fragment(), c_Listener {
     override fun onClick(category: CategoryData) {
 
         when (category.categoryName) {
-            "01_breakfast" -> ACTIVE_CATEGORY = BREAKFAST
-            "02_pizza" -> ACTIVE_CATEGORY = PIZZA
-            "03_focaccia" -> ACTIVE_CATEGORY = FOCACCIA
-            "04_lunch" -> ACTIVE_CATEGORY = LUNCH
-            "05_pasta" -> ACTIVE_CATEGORY = PASTA
-            "06_hot_snacks" -> ACTIVE_CATEGORY = HOT_SNACKS
-            "07_salad" -> ACTIVE_CATEGORY = SALAD
-            "08_raviolli" -> ACTIVE_CATEGORY = RAVIOLLI
-            "09_hot_meal" -> ACTIVE_CATEGORY = HOT_MEAL
-            "10_ice_cream" -> ACTIVE_CATEGORY = ICE_CREAM
-            "11_milkshakes" -> ACTIVE_CATEGORY = MILKSHAKE
-            "12_hot_drinks" -> ACTIVE_CATEGORY = HOT_DRINKS
-            "13_cold_drinks" -> ACTIVE_CATEGORY = COLD_DRINKS
-            "14_freezing" -> ACTIVE_CATEGORY = COLD_DRINKS
-            else -> ACTIVE_CATEGORY = ACTIVE_CATEGORY
+            "01_breakfast" -> { ACTIVE_CATEGORY = BREAKFAST;
+                openSubFragment(BreakfastFragment(), R.id.main_food_menu)
+            }
+            "02_pizza" -> {ACTIVE_CATEGORY = PIZZA;
+                openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
+            }
+            "03_focaccia" -> {ACTIVE_CATEGORY = FOCACCIA;
+                openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
+            }
+            "04_lunch" -> {ACTIVE_CATEGORY = LUNCH;
+                openSubFragment(LunchFragment(), R.id.main_food_menu)
+            }
+            "05_pasta" -> {ACTIVE_CATEGORY = PASTA;
+                openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
+            }
+            "06_hot_snacks" -> {ACTIVE_CATEGORY = HOT_SNACKS;
+                openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
+            }
+            "07_salad" -> {ACTIVE_CATEGORY = SALAD;
+                openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
+            }
+            "08_raviolli" -> {ACTIVE_CATEGORY = RAVIOLLI;
+                openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
+            }
+            "09_hot_meal" -> {ACTIVE_CATEGORY = HOT_MEAL;
+                openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
+            }
+            "10_ice_cream" -> {ACTIVE_CATEGORY = ICE_CREAM;
+                openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
+            }
+            "11_milkshakes" -> {ACTIVE_CATEGORY = MILKSHAKE;
+                openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
+            }
+            "12_hot_drinks" -> {ACTIVE_CATEGORY = HOT_DRINKS;
+                openSubFragment(HotDrinksFragment(), R.id.main_food_menu)
+            }
+            "13_cold_drinks" -> {ACTIVE_CATEGORY = COLD_DRINKS;
+                openSubFragment(ColdDrinksFragment(), R.id.main_food_menu)
+            }
+            "14_freezing" -> {ACTIVE_CATEGORY = FREEZING;
+                openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
+            }
+            else -> {ACTIVE_CATEGORY = ACTIVE_CATEGORY }
         }
-
+        livedata.postValue(ACTIVE_CATEGORY)
         pca_base = FirebaseDatabase.getInstance().reference
         pca_base.child(ACTIVE).setValue(ACTIVE_CATEGORY).addOnSuccessListener {
-            Toast.makeText(context, ACTIVE_CATEGORY,Toast.LENGTH_SHORT).show()
+            //Toast.makeText(context, ACTIVE_CATEGORY,Toast.LENGTH_SHORT).show()
         }.addOnFailureListener()
         {
             Toast.makeText(context,"Сохранение в говне!",Toast.LENGTH_SHORT).show()
