@@ -8,8 +8,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -58,7 +56,9 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_restraunt_menu, R.id.nav_active_category
+                R.id.nav_home,
+                R.id.nav_admin_add,
+                R.id.nav_admin_lunch
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

@@ -9,46 +9,12 @@
             android:icon="@drawable/fimage_menu"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_active_category"
-            android:icon="@drawable/favorite_meal"
-            android:title="@string/menu_favourites" />
-        <item
-            android:id="@+id/nav_admin"
-            android:icon="@drawable/fimage_shopping_bag"
-            android:title="@string/admin_cabinet" />
-        <item
-            android:id="@+id/nav_pizza"
+            android:id="@+id/nav_admin_add"
             android:icon="@drawable/fimage_pizza"
-            android:title="@string/category_pizza" />
+            android:title="@string/admin_add" />
         <item
-            android:id="@+id/nav_breakfast"
-            android:icon="@drawable/favorite_star"
-            android:title="Завтраки" />
-        <!--        <item-->
-<!--            android:id="@+id/nav_category_pasta"-->
-<!--            android:icon="@drawable/ic_menu_slideshow"-->
-<!--            android:title="@string/category_pasta" />-->
-<!--        <item-->
-<!--            android:id="@+id/nav_category_pies"-->
-<!--            android:icon="@drawable/ic_menu_slideshow"-->
-<!--            android:title="@string/category_pies" />-->
-<!--        <item-->
-<!--            android:id="@+id/nav_scategory_cakes"-->
-<!--            android:icon="@drawable/ic_menu_slideshow"-->
-<!--            android:title="@string/category_cakes" />-->
-<!--        <item-->
-<!--            android:id="@+id/nav_scategory_lunch"-->
-<!--            android:icon="@drawable/ic_menu_slideshow"-->
-<!--            android:title="@string/category_lunch" />-->
-<!--        <item-->
-<!--            android:id="@+id/nav_category_drinks_hot"-->
-<!--            android:icon="@drawable/ic_menu_slideshow"-->
-<!--            android:title="@string/category_drinks_hot" />-->
-<!--        <item-->
-<!--            android:id="@+id/nav_category_drinks_cold"-->
-<!--            android:icon="@drawable/ic_menu_slideshow"-->
-<!--            android:title="@string/category_drinks_cold" />-->
-
-
+            android:id="@+id/nav_admin_lunch"
+            android:icon="@drawable/fimage_shopping_bag"
+            android:title="@string/bussines_lunch_config" />
     </group>
 </menu>

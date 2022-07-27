@@ -42,7 +42,6 @@ open class BreakfastFragment : HomeFragment() {
             baseRV = breakfastScroller
             addonsRV = addonsScroller
 
-
             baseRV.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             addonsRV.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             foodArrayList = arrayListOf<FoodData>()
@@ -53,11 +52,9 @@ open class BreakfastFragment : HomeFragment() {
             getAddonsData()
             onClick(CategoryData())
 
-
         }
         return root
     }
-
 
     private fun getFoodData() {
         livedata.observe(viewLifecycleOwner){

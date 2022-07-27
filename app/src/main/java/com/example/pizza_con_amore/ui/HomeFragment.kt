@@ -43,9 +43,15 @@ open class HomeFragment : Fragment(), c_Listener {
             categoryRV.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             categoryArrayList = arrayListOf<CategoryData>()
             getCategoryData()
+
+            adminShell.setOnClickListener {
+               // drawerLayout.openDrawer(navView)
+            }
+
         }
         return root
     }
+
 
     private fun getCategoryData() {
         pca_base = FirebaseDatabase.getInstance().getReference(NODE_CATEGORIES)

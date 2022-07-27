@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.AdminLunchConfigFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:elevation="5dp"
+            app:cardCornerRadius="60dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/admin_add"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/food_category_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Категории"
+                    android:textColor="@color/black" />
+
+
+                <EditText
+                    android:id="@+id/categoryId"
+                    style="@style/admin_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:hint="ID Категории в базе"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/categoryName"
+                    style="@style/admin_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:hint="Название категории в базе"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/categoryTitle"
+                    style="@style/admin_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:hint="Заголовок категории в приложении"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/categoryImageLink"
+                    style="@style/admin_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:hint="Ссылка на иконку"
+                    android:textColor="@color/black" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/addCategory"
+                    style="@style/food_category_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_button"
+                    android:text="Добавить"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+
+                <Button
+                    android:id="@+id/updateCategory"
+                    style="@style/food_category_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_button"
+                    android:text="Обновить"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+
+                <Button
+                    android:id="@+id/deleteCategory"
+                    style="@style/food_category_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_button"
+                    android:text="Удалить"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:elevation="5dp"
+            app:cardCornerRadius="60dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/admin_update"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/food_category_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Еда"
+                    android:textColor="@color/black" />
+
+
+                <EditText
+                    android:id="@+id/foodId"
+                    style="@style/admin_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:hint="ID еды в базе"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/foodName"
+                    style="@style/admin_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:hint="Название позиции в меню"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/foodPrice"
+                    style="@style/admin_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:hint="Цена"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/foodMass"
+                    style="@style/admin_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:hint="Масса в граммах"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/foodDescription"
+                    style="@style/admin_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:hint="Подробное описание"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/foodIngredientList"
+                    style="@style/admin_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:hint="Список ингредиентов"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/foodCategory"
+                    style="@style/admin_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:hint="Категория"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/foodImageLink"
+                    style="@style/admin_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:hint="Ссылка на фоновое изображение"
+                    android:textColor="@color/black" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/addFood"
+                    style="@style/food_category_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_button"
+                    android:text="Добавить"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+
+                <Button
+                    android:id="@+id/updateFood"
+                    style="@style/food_category_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_button"
+                    android:text="Обновить"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+
+                <Button
+                    android:id="@+id/deleteFood"
+                    style="@style/food_category_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_button"
+                    android:text="Удалить"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

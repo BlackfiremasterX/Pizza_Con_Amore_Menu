@@ -6,15 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary_color3"
-    tools:context=".ui.ActiveCategoryFragment">
+    tools:context=".ui.category_fragments.HotDrinksFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/coffee"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="45dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="5dp"
         android:layout_marginEnd="10dp"
+        app:cardCornerRadius="45dp"
         app:layout_constraintBottom_toTopOf="@+id/percent_up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/percent_down"
@@ -22,11 +22,11 @@
 
         <TextView
             style="@style/food_item_style"
-            android:layout_margin="0dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Кофе"
+            android:layout_margin="0dp"
             android:background="@color/reserve_color1_p4"
+            android:text="Кофе"
             android:textColor="@color/black"
             android:textSize="48sp" />
 
@@ -36,27 +36,27 @@
         android:id="@+id/tea"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="45dp"
         android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="5dp"
+        android:background="@color/primary_color1"
+        app:cardCornerRadius="45dp"
         app:layout_constraintBottom_toTopOf="@+id/percent_up"
         app:layout_constraintEnd_toStartOf="@+id/percent_down"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <TextView
             style="@style/food_item_style"
-            android:layout_margin="0dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Чай"
+            android:layout_margin="0dp"
             android:background="@color/primary_color1"
+            android:text="Чай"
             android:textColor="@color/black"
-            android:textSize="48sp"
-            />
+            android:textSize="48sp" />
 
     </androidx.cardview.widget.CardView>
-
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -66,45 +66,177 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.1" />
 
-
-    <androidx.recyclerview.widget.RecyclerView
-
-        android:id="@+id/tea_scroller"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/primary_color3"
-        android:paddingStart="7dp"
-        android:paddingEnd="7dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        app:cardBackgroundColor="@color/primary_color3"
+        app:cardCornerRadius="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/percent_down"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/percent_up"
-        tools:listitem="@layout/menu_food_item">
+        app:layout_constraintTop_toBottomOf="@id/percent_up">
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tea_scroller"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/hot_drinks_item">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.cardview.widget.CardView>
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/percent_down"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
 
-    <androidx.recyclerview.widget.RecyclerView
-
-        android:id="@+id/coffee_scroller"
+    <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/primary_color3"
-        android:paddingStart="7dp"
-        android:paddingEnd="7dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/percent_down"
-        app:layout_constraintTop_toBottomOf="@id/percent_up"
-        tools:listitem="@layout/menu_food_item">
+        app:layout_constraintTop_toBottomOf="@id/percent_up">
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/coffee_scroller"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/primary_color3"
+            tools:listitem="@layout/hot_drinks_item">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <ImageView
+        android:id="@+id/tea_leaf"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:elevation="10dp"
+        android:src="@drawable/tea_leaves"
+        app:layout_constraintBottom_toBottomOf="@+id/tea"
+        app:layout_constraintEnd_toEndOf="@+id/tea"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/tea"
+        app:layout_constraintTop_toTopOf="@+id/tea" />
+
+
+    <ImageView
+        android:id="@+id/cofee_beans"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:elevation="10dp"
+        android:src="@drawable/coffee_beans"
+        app:layout_constraintBottom_toBottomOf="@+id/coffee"
+        app:layout_constraintEnd_toEndOf="@+id/coffee"
+        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintStart_toStartOf="@+id/coffee"
+        app:layout_constraintTop_toTopOf="@+id/coffee" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tea_pot_icon_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.8"
+        android:elevation="5dp"
+        app:cardCornerRadius="45dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tea"
+        app:layout_constraintEnd_toEndOf="@+id/tea"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toEndOf="@+id/tea_leaf"
+        app:layout_constraintTop_toTopOf="@+id/tea">
+
+        <ImageView
+            android:id="@+id/pot"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="10dp"
+            android:elevation="10dp"
+            android:src="@drawable/tea_pot" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tea_cup_icon_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.8"
+        android:elevation="5dp"
+        app:cardCornerRadius="45dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tea"
+        app:layout_constraintEnd_toEndOf="@+id/tea"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toEndOf="@+id/tea_leaf"
+        app:layout_constraintTop_toTopOf="@+id/tea">
+
+        <ImageView
+            android:id="@+id/tea_cup"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="10dp"
+            android:elevation="10dp"
+            android:src="@drawable/tea_cup" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/coffee_mini_icon_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.8"
+        android:elevation="5dp"
+        app:cardCornerRadius="45dp"
+        app:layout_constraintBottom_toBottomOf="@+id/coffee"
+        app:layout_constraintEnd_toEndOf="@+id/coffee"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toEndOf="@+id/cofee_beans"
+        app:layout_constraintTop_toTopOf="@+id/coffee">
+
+        <ImageView
+            android:id="@+id/coffee_mini"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="10dp"
+            android:elevation="10dp"
+            android:src="@drawable/coffee_mini" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/coffee_big_icon_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.8"
+        android:elevation="5dp"
+        app:cardCornerRadius="45dp"
+        app:layout_constraintBottom_toBottomOf="@+id/coffee"
+        app:layout_constraintEnd_toEndOf="@+id/coffee"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toEndOf="@+id/cofee_beans"
+        app:layout_constraintTop_toTopOf="@+id/coffee">
+
+        <ImageView
+            android:id="@+id/coffee_big"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="10dp"
+            android:elevation="10dp"
+            android:src="@drawable/coffee_big" />
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

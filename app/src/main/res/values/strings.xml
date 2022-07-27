@@ -20,6 +20,7 @@
     <string name="password">Пароль</string>
     <string name="my_cart">Корзина</string>
     <string name="admin_cabinet">Админка</string>
+    <string name="admin_add">Добавить в базу</string>
     <string name="log_out">Выйти</string>
 
 
@@ -86,4 +87,5 @@
     <string name="pizza_hawaii_mass">\u0020 520 грамм \u0020</string>
     <string name="pizza_margarita_mass">\u0020 520 грамм \u0020</string>
     <string name="pizza_toscana_mass">\u0020 520 грамм \u0020</string>
+    <string name="bussines_lunch_config">Конфигуратор бизнес ланча</string>
 </resources>

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pizza_con_amore.*
 import com.example.pizza_con_amore.databinding.FragmentActiveCategoryBinding
+import com.example.pizza_con_amore.databinding.IndividualLunchFragmentBinding
 import com.example.pizza_con_amore.firebase.FirebaseDataStructure.*
 import com.example.pizza_con_amore.firebase.adapter.FoodAdapter
 import com.example.pizza_con_amore.ui.HomeFragment
@@ -17,9 +18,9 @@ import com.google.firebase.database.*
 
 open class LunchFragment : HomeFragment() {
 
-    lateinit var foodRV: RecyclerView
+    lateinit var complexRV: RecyclerView
     lateinit var food_adapter:FoodAdapter
-    private var _binding: FragmentActiveCategoryBinding? = null
+    private var _binding: IndividualLunchFragmentBinding? = null
     private val binding get() = _binding!!
 
 
@@ -30,12 +31,12 @@ open class LunchFragment : HomeFragment() {
     ): View {
 
 
-        _binding = FragmentActiveCategoryBinding.inflate(inflater, container, false)
+        _binding = IndividualLunchFragmentBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         binding.apply {
-            foodRV = mainFoodScroll
-            foodRV.layoutManager = GridLayoutManager(context, 2)
+            complexRV = complexScroll
+            complexRV.layoutManager = GridLayoutManager(context, 1)
 
             foodArrayList = arrayListOf<FoodData>()
             food_adapter = FoodAdapter(foodArrayList,context!!)
@@ -62,7 +63,7 @@ open class LunchFragment : HomeFragment() {
                                 println(e.message)
                                 println(foodSnapsot.value)
                             }}
-                        foodRV.adapter = FoodAdapter(foodArrayList, context!!)
+                        complexRV.adapter = FoodAdapter(foodArrayList, context!!)
                        // Toast.makeText(context,"Успешно обновлено",Toast.LENGTH_SHORT).show()
                     }
                 }
@@ -83,7 +84,7 @@ open class LunchFragment : HomeFragment() {
     override fun onClick(category: CategoryData) {
         getFoodData()
         food_adapter.notifyDataSetChanged()
-        foodRV = binding.mainFoodScroll
+        complexRV = binding.complexScroll
         super.onClick(category)
     }
 

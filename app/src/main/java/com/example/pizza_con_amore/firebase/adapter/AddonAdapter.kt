@@ -11,7 +11,6 @@ import com.example.pizza_con_amore.R
 import com.example.pizza_con_amore.databinding.BreakfastAddonItemBinding
 import com.example.pizza_con_amore.firebase.FirebaseDataStructure.*
 
-
 class AddonAdapter(private val addonList: ArrayList<AddonsData>, context: Context) :
     RecyclerView.Adapter<AddonAdapter.AddonHolder>() {
     private var contextAddon = context
@@ -41,7 +40,6 @@ class AddonAdapter(private val addonList: ArrayList<AddonsData>, context: Contex
     override fun getItemCount(): Int {
         return addonList.size
     }
-
 
     class AddonHolder(addonItem: View) : RecyclerView.ViewHolder(addonItem) {
         val binding = BreakfastAddonItemBinding.bind(addonItem)

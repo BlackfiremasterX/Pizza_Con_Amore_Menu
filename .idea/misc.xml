@@ -29,11 +29,13 @@
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/activity_welcome.xml" value="0.17" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/app_bar_main.xml" value="0.22" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/breakfast_addon_item.xml" value="0.5" />
+        <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/cold_drinks_item.xml" value="0.18307291666666667" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/content_main.xml" value="0.18" />
-        <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/drinks_item.xml" value="0.33" />
+        <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/drinks_item.xml" value="0.18" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/food_category_item.xml" value="0.75" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/fragment_active_category.xml" value="0.12" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/fragment_admin_add_update.xml" value="0.33" />
+        <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/fragment_admin_lunch_configurator.xml" value="0.18515625" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/fragment_breakfast.xml" value="0.1" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/fragment_cold_drinks.xml" value="0.1" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/fragment_favourites.xml" value="0.277734375" />
@@ -41,7 +43,7 @@
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/fragment_food_item_details.xml" value="0.25" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/fragment_freezing.xml" value="0.1" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/fragment_gallery.xml" value="0.3703125" />
-        <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/fragment_home.xml" value="0.3671875" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/fragment_hot_drinks.xml" value="0.1" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/fragment_hot_meal.xml" value="0.1" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/fragment_hot_snacks.xml" value="0.1" />
@@ -57,10 +59,11 @@
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/fragment_salad.xml" value="0.1" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/fragment_slideshow.xml" value="0.3703125" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/home_horizontal_scroll_item.xml" value="0.142578125" />
-        <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/individual_breakfast_fragment.xml" value="0.25" />
-        <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/individual_cold_drinks_fragment.xml" value="0.1" />
-        <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/individual_hot_drinks_fragment.xml" value="0.22" />
-        <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/individual_lunch_fragment.xml" value="0.1" />
+        <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/hot_drinks_item.xml" value="0.18515625" />
+        <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/individual_breakfast_fragment.xml" value="0.14" />
+        <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/individual_cold_drinks_fragment.xml" value="0.12" />
+        <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/individual_hot_drinks_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/individual_lunch_fragment.xml" value="0.18" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/ingredient_item.xml" value="0.1" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/meal_item_details.xml" value="0.1" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/menu_active_category_screen.xml" value="0.1" />
@@ -69,7 +72,7 @@
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/menu_ingredient_item.xml" value="0.5" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/menu_meal_item_details.xml" value="0.16" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/layout/nav_header_main.xml" value="0.3969017094017094" />
-        <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/menu/activity_main_drawer.xml" value="0.75" />
+        <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/menu/activity_main_drawer.xml" value="1.0" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/menu/main.xml" value="0.277734375" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.371" />
         <entry key="..\:/Users/misha/AndroidStudioProjects/Pizza_Con_Amore/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.185" />
