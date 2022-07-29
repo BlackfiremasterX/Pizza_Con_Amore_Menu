@@ -62,6 +62,7 @@ var CURRENT_FOOD_ITEM: String = DEFAULT_FOOD_ITEM
 val livedata = MutableLiveData(BREAKFAST)
 
 fun getCategoryRef(category: String) = FirebaseDatabase.getInstance().reference.child(NODE_CATEGORIES).child(category).child(category + "_list")
+fun getLunchComplexRef(complex: String) = FirebaseDatabase.getInstance().reference.child(NODE_CATEGORIES).child(LUNCH).child(LUNCH + "_list").child("complex_lunch_list")
 fun getAddonRef(addons: String) = FirebaseDatabase.getInstance().reference.child(NODE_ADDONS)
 fun getTeaRef(tea: String) = FirebaseDatabase.getInstance().reference.child(NODE_CATEGORIES).child(HOT_DRINKS).child(HOT_DRINKS+"_list").child(TEA)
 fun getCoffeeRef(coffee: String) = FirebaseDatabase.getInstance().reference.child(NODE_CATEGORIES).child(HOT_DRINKS).child(HOT_DRINKS+"_list").child(COFFEE)

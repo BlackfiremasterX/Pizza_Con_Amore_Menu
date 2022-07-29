@@ -97,7 +97,7 @@
             android:layout_height="match_parent"
             android:layout_margin="0dp"
             android:background="@color/light_gray"
-            android:text="Алкогольные напитки"
+            android:text="Алкогольные напитки и энергетики"
             android:textColor="@color/black"
             android:textSize="36sp" />
 

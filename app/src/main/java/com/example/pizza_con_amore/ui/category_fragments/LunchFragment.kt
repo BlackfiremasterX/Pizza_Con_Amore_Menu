@@ -11,7 +11,10 @@ import com.example.pizza_con_amore.*
 import com.example.pizza_con_amore.databinding.FragmentActiveCategoryBinding
 import com.example.pizza_con_amore.databinding.IndividualLunchFragmentBinding
 import com.example.pizza_con_amore.firebase.FirebaseDataStructure.*
+import com.example.pizza_con_amore.firebase.adapter.ColdDrinksAdapter
 import com.example.pizza_con_amore.firebase.adapter.FoodAdapter
+import com.example.pizza_con_amore.firebase.adapter.HotDrinksAdapter
+import com.example.pizza_con_amore.firebase.adapter.LunchComplexAdapter
 import com.example.pizza_con_amore.ui.HomeFragment
 import com.google.firebase.database.*
 
@@ -19,7 +22,7 @@ import com.google.firebase.database.*
 open class LunchFragment : HomeFragment() {
 
     lateinit var complexRV: RecyclerView
-    lateinit var food_adapter:FoodAdapter
+    lateinit var complex_adapter:LunchComplexAdapter
     private var _binding: IndividualLunchFragmentBinding? = null
     private val binding get() = _binding!!
 
@@ -38,8 +41,8 @@ open class LunchFragment : HomeFragment() {
             complexRV = complexScroll
             complexRV.layoutManager = GridLayoutManager(context, 1)
 
-            foodArrayList = arrayListOf<FoodData>()
-            food_adapter = FoodAdapter(foodArrayList,context!!)
+            complexArrayList = arrayListOf<FoodData>()
+            complex_adapter = LunchComplexAdapter(complexArrayList,context!!)
             onClick(CategoryData())
 
 
@@ -48,22 +51,22 @@ open class LunchFragment : HomeFragment() {
     }
 
 
-    private fun getFoodData() {
+    private fun getComplexData() {
         livedata.observe(viewLifecycleOwner){
-            pca_base = getCategoryRef(it)
+            pca_base = getLunchComplexRef(it)
             var getData = object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    foodArrayList.clear()
+                    complexArrayList.clear()
                     if (snapshot.exists()) {
-                        for (foodSnapsot in snapshot.children) {
+                        for (complexSnapsot in snapshot.children) {
                             try{
-                                val food = foodSnapsot.getValue(FoodData::class.java)
-                                foodArrayList.add(food!!) //food?.let { foodArrayList.add(it) }
+                                val complex = complexSnapsot.getValue(FoodData::class.java)
+                                complexArrayList.add(complex!!) //food?.let { foodArrayList.add(it) }
                             } catch (e:Exception){
                                 println(e.message)
-                                println(foodSnapsot.value)
+                                println(complexSnapsot.value)
                             }}
-                        complexRV.adapter = FoodAdapter(foodArrayList, context!!)
+                        complexRV.adapter = LunchComplexAdapter(complexArrayList, context!!)
                        // Toast.makeText(context,"Успешно обновлено",Toast.LENGTH_SHORT).show()
                     }
                 }
@@ -82,8 +85,8 @@ open class LunchFragment : HomeFragment() {
     }
 
     override fun onClick(category: CategoryData) {
-        getFoodData()
-        food_adapter.notifyDataSetChanged()
+        getComplexData()
+        complex_adapter.notifyDataSetChanged()
         complexRV = binding.complexScroll
         super.onClick(category)
     }

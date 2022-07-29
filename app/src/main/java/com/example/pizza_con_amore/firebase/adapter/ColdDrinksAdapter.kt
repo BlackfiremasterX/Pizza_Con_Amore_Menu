@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.pizza_con_amore.R
 import com.example.pizza_con_amore.databinding.ColdDrinksItemBinding
 
@@ -29,6 +30,13 @@ class ColdDrinksAdapter(private val drinksList: ArrayList<FoodData>, context: Co
         holder.binding.coldDrinksItemTitle.text = currentItem.foodName + "\u0020"
         holder.binding.coldDrinksItemMass.text ="\u0020" + currentItem.foodMass + "\u0020"
         holder.binding.coldDrinksItemPrice.text = "\u0020"+ currentItem.foodPrice + " ₽ \u0020"
+
+        //Подгрузка картинки элемента.
+        Glide.with(holder.binding.coldDrinksItemImg.context)
+            .load(currentItem.foodImageLink)
+            .placeholder(R.drawable.bg_pizza_steam)
+            .error(R.drawable.bg_pizza_steam)
+            .into(holder.binding.coldDrinksItemImg)
 
         holder.bind(currentItem,contextDrink)
     }

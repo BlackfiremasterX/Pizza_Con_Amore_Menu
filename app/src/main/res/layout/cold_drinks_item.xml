@@ -92,7 +92,7 @@
             <TextView
                 android:id="@+id/cold_drinks_item_title"
                 style="@style/food_item_style"
-                android:textSize="60sp"
+                android:textSize="42sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
