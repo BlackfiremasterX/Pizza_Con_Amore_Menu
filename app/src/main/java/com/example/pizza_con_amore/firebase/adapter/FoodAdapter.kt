@@ -13,8 +13,11 @@ import com.bumptech.glide.Glide
 import com.example.pizza_con_amore.MainActivity
 import com.example.pizza_con_amore.R
 import com.example.pizza_con_amore.databinding.MenuFoodItemBinding
+import com.example.pizza_con_amore.firebase.FirebaseDataStructure
 import com.example.pizza_con_amore.firebase.FirebaseDataStructure.FoodData
 import com.example.pizza_con_amore.ui.FoodItemDetailsFragment
+import com.example.pizza_con_amore.ui.HomeFragment
+import com.example.pizza_con_amore.ui.category_fragments.HotDrinksFragment
 
 
 class FoodAdapter(private val foodList: ArrayList<FoodData>, context: Context) :
@@ -58,17 +61,11 @@ class FoodAdapter(private val foodList: ArrayList<FoodData>, context: Context) :
         {
             foodItemCard.setOnClickListener(){
                 Toast.makeText(context,"Нажато: ${foodItemTitle.text}", Toast.LENGTH_SHORT).show()
-               // val intent_to_food_details = Intent(context, FoodItemDetailsFragment::class.java).apply {
-//                    putExtra("title",foodItemTitle.text.toString())
-//                    putExtra("price",foodItemPrice.text.toString())
-//                    putExtra("mass",foodItemMass.text.toString())
-//                    putExtra("mass",foodItemMass.text.toString())
-//                    putExtra("mass",foodItemMass.text.toString())
-//                    putExtra("mass",foodItemMass.text.toString())
-                }
-               // context.startActivity(intent_to_food_details)
             }
 
 
         }
     }
+    interface f_Listener {
+        fun onClick(category: FoodData)
+    }}

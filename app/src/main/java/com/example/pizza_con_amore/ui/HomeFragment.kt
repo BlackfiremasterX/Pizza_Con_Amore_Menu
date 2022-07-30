@@ -87,6 +87,7 @@ open class HomeFragment : Fragment(), c_Listener {
     companion object {
         @JvmStatic
         fun newInstance() = HomeFragment()
+
     }
 
     override fun onClick(category: CategoryData) {
