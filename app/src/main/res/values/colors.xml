@@ -36,6 +36,7 @@
     <color name="reserve_color_p3">#3D405B</color>
     <color name="reserve_color_p4">#81B29A</color>
     <color name="reserve_color_p5">#F2CC8F</color>
+    <color name="reserve_color_p6">#D6A388</color>
 
 
     //cofee palette 1
@@ -55,7 +56,7 @@
 
 
     //Admin Palette
-    <color name="admin_add">#C4ADCA8D</color>
+    <color name="admin_add">#ADCA8D</color>
     <color name="admin_update">#C4CABD8D</color>
     <color name="admin_delete">#C4CA8D8D</color>
 

@@ -8,7 +8,6 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pizza_con_amore.*
-import com.example.pizza_con_amore.databinding.IndividualBreakfastFragmentBinding
 import com.example.pizza_con_amore.databinding.IndividualHotSnacksFragmentBinding
 import com.example.pizza_con_amore.firebase.FirebaseDataStructure.*
 import com.example.pizza_con_amore.firebase.adapter.AddonAdapter
@@ -47,11 +46,11 @@ open class HotSnacksFragment : HomeFragment() {
             addonsRV.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             foodArrayList = arrayListOf<FoodData>()
             addonsArrayList = arrayListOf<AddonsData>()
-            base_adapter = FoodAdapter(foodArrayList,context!!)
+            base_adapter = FoodAdapter(foodArrayList,this@HotSnacksFragment,context!!)
             addons_adapter = AddonAdapter(addonsArrayList,context!!)
 
             getAddonsData()
-            onClick(CategoryData())
+            onCategoryClick(CategoryData())
 
         }
         return root
@@ -72,7 +71,7 @@ open class HotSnacksFragment : HomeFragment() {
                                 println(e.message)
                                 println(foodSnapsot.value)
                             }}
-                        baseRV.adapter = FoodAdapter(foodArrayList, context!!)
+                        baseRV.adapter = FoodAdapter(foodArrayList,this@HotSnacksFragment, context!!)
                         //Toast.makeText(context,"Успешно обновлено",Toast.LENGTH_SHORT).show()
                     }
                 }
@@ -117,12 +116,12 @@ open class HotSnacksFragment : HomeFragment() {
         _binding = null
     }
 
-    override fun onClick(category: CategoryData) {
+    override fun onCategoryClick(category: CategoryData) {
         getFoodData()
         base_adapter.notifyDataSetChanged()
         addons_adapter.notifyDataSetChanged()
         baseRV = binding.breakfastScroller
-        super.onClick(category)
+        super.onCategoryClick(category)
     }
 
 

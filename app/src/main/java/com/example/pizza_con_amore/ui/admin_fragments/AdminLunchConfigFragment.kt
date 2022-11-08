@@ -1,23 +1,21 @@
-package com.example.pizza_con_amore.ui
+package com.example.pizza_con_amore.ui.admin_fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.pizza_con_amore.INGREDIENT_PATH
 import com.example.pizza_con_amore.NODE_CATEGORIES
-import com.example.pizza_con_amore.databinding.FragmentAdminAddUpdateBinding
+import com.example.pizza_con_amore.databinding.FragmentAdminLunchConfiguratorBinding
 import com.example.pizza_con_amore.firebase.FirebaseDataStructure
-import com.example.pizza_con_amore.firebase.FirebaseDataStructure.IngredientsData
-import com.google.firebase.database.DatabaseReference
+import com.example.pizza_con_amore.ui.HomeFragment
 import com.google.firebase.database.FirebaseDatabase
 
 
-class AdminAddUpdateFragment : HomeFragment() {
+class AdminLunchConfigFragment : HomeFragment() {
 
 
-    private var _binding: FragmentAdminAddUpdateBinding? = null
+    private var _binding: FragmentAdminLunchConfiguratorBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -27,7 +25,7 @@ class AdminAddUpdateFragment : HomeFragment() {
     ): View {
 
 
-        _binding = FragmentAdminAddUpdateBinding.inflate(inflater, container, false)
+        _binding = FragmentAdminLunchConfiguratorBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
                 binding.apply {
@@ -70,14 +68,6 @@ class AdminAddUpdateFragment : HomeFragment() {
                         pca_base = FirebaseDatabase.getInstance().getReference("$NODE_CATEGORIES/$foodCategory/${foodCategory}_list")
                         val food = FirebaseDataStructure.FoodData(foodId,foodName,foodPrice,foodMass,foodDescription,foodIngredientList,foodCategory,foodImageLink)
                         pca_base.child(foodId).setValue(food).addOnSuccessListener {
-//                            binding.foodId.text.clear()
-//                            binding.foodName.text.clear()
-//                            binding.foodPrice.text.clear()
-//                            binding.foodMass.text.clear()
-//                            binding.foodDescription.text.clear()
-//                            binding.foodIngredientList.text.clear()
-//                            binding.foodCategory.text.clear()
-//                            binding.foodImageLink.text.clear()
                             Toast.makeText(context,"Успешно сохранено",Toast.LENGTH_SHORT).show()
 
                         }.addOnFailureListener()
@@ -85,27 +75,6 @@ class AdminAddUpdateFragment : HomeFragment() {
                             Toast.makeText(context,"Сохранение в говне!",Toast.LENGTH_SHORT).show()
                         }
                     }
-
-                    addIngredient.setOnClickListener {
-
-                        val ingredientId = ingredientId.text.toString()
-                        val ingredientName = ingredientName.text.toString()
-                        val ingredientPrice = ingredientPrice.text.toString()
-                        val ingredientMass = ingredientMass.text.toString()
-                        val ingredientFoodList = ingredientFoodList.text.toString()
-                        val ingredientImageLink = ingredientImageLink.text.toString()
-                        pca_base = FirebaseDatabase.getInstance().getReference(INGREDIENT_PATH)
-                        val ingredient = IngredientsData(ingredientId,ingredientName,ingredientPrice,ingredientMass,ingredientFoodList,ingredientImageLink)
-                        pca_base.child(ingredientId).setValue(ingredient).addOnSuccessListener {
-                            Toast.makeText(context,"Успешно сохранено",Toast.LENGTH_SHORT).show()
-                        }.addOnFailureListener()
-                        {
-                            Toast.makeText(context,"Сохранение в говне!",Toast.LENGTH_SHORT).show()
-                        }
-                    }
-
-
-
                 }
 
         return root
@@ -118,6 +87,6 @@ class AdminAddUpdateFragment : HomeFragment() {
 
     companion object{
         @JvmStatic
-        fun newInstance() = AdminAddUpdateFragment()
+        fun newInstance() = AdminLunchConfigFragment()
     }
 }

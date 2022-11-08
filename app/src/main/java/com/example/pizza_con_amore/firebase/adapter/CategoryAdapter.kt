@@ -4,16 +4,11 @@ package com.example.pizza_con_amore.firebase.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.pizza_con_amore.ACTIVE_CATEGORY
-import com.example.pizza_con_amore.NODE_CATEGORIES
 import com.example.pizza_con_amore.R
-import com.example.pizza_con_amore.categoryArrayList
 import com.example.pizza_con_amore.databinding.MenuFoodCategoryItemBinding
 import com.example.pizza_con_amore.firebase.FirebaseDataStructure.*
-import com.google.firebase.database.FirebaseDatabase
 
 
 class CategoryAdapter(
@@ -52,12 +47,12 @@ class CategoryAdapter(
         fun bind(categoryItem: CategoryData, listener: c_Listener) = with(binding)
         {
             foodCategoryItemCard.setOnClickListener() {
-                listener.onClick(categoryItem)
+                listener.onCategoryClick(categoryItem)
             }
         }
     }
 
     interface c_Listener {
-        fun onClick(category: CategoryData)
+        fun onCategoryClick(category: CategoryData)
     }
 }

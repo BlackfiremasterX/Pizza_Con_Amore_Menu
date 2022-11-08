@@ -5,15 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pizza_con_amore.*
-import com.example.pizza_con_amore.databinding.FragmentActiveCategoryBinding
 import com.example.pizza_con_amore.databinding.IndividualColdDrinksFragmentBinding
 import com.example.pizza_con_amore.firebase.FirebaseDataStructure.*
 import com.example.pizza_con_amore.firebase.adapter.ColdDrinksAdapter
-import com.example.pizza_con_amore.firebase.adapter.FoodAdapter
 import com.example.pizza_con_amore.ui.HomeFragment
 import com.google.firebase.database.*
 
@@ -47,9 +44,10 @@ open class ColdDrinksFragment : HomeFragment() {
 
             noAlcoArrayList = arrayListOf<FoodData>()
             alcoArrayList = arrayListOf<FoodData>()
+            compoundArrayList = arrayListOf<IngredientsData>()
             alco_drinks_adapter = ColdDrinksAdapter(alcoArrayList,context!!)
             noalco_drinks_adapter = ColdDrinksAdapter(noAlcoArrayList,context!!)
-            onClick(CategoryData())
+            onCategoryClick(CategoryData())
             getAlcoDrinksData()
             getNoAlcoDrinksData()
 
@@ -119,14 +117,18 @@ open class ColdDrinksFragment : HomeFragment() {
         _binding = null
     }
 
-    override fun onClick(category: CategoryData) {
+    override fun onCategoryClick(category: CategoryData) {
         getAlcoDrinksData()
         getNoAlcoDrinksData()
         alco_drinks_adapter.notifyDataSetChanged()
         noalco_drinks_adapter.notifyDataSetChanged()
         noalcoRV = binding.notAlcoholScroll
         alcoRV = binding.alcoholScroll
-        super.onClick(category)
+        super.onCategoryClick(category)
+    }
+
+    override fun onFoodItemClick(food: FoodData, position: Int) {
+        TODO("Not yet implemented")
     }
 
 

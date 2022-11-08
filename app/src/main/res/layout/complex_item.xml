@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="horizontal"
-        app:cardBackgroundColor="@color/reserve_color_p2"
+        app:cardBackgroundColor="@color/reserve_color_p6"
         app:cardCornerRadius="45dp">
 
         <androidx.cardview.widget.CardView

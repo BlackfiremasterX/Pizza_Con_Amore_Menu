@@ -1,4 +1,4 @@
-package com.example.pizza_con_amore.ui
+package com.example.pizza_con_amore.ui.category_fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +11,7 @@ import com.example.pizza_con_amore.*
 import com.example.pizza_con_amore.databinding.FragmentActiveCategoryBinding
 import com.example.pizza_con_amore.firebase.FirebaseDataStructure.*
 import com.example.pizza_con_amore.firebase.adapter.FoodAdapter
+import com.example.pizza_con_amore.ui.HomeFragment
 import com.google.firebase.database.*
 
 
@@ -37,8 +38,8 @@ open class ActiveCategoryFragment : HomeFragment() {
             foodRV.layoutManager = GridLayoutManager(context, 2)
 
             foodArrayList = arrayListOf<FoodData>()
-            food_adapter = FoodAdapter(foodArrayList,context!!)
-            onClick(CategoryData())
+            food_adapter = FoodAdapter(foodArrayList,this@ActiveCategoryFragment,context!!)
+            onCategoryClick(CategoryData())
 
 
         }
@@ -61,7 +62,7 @@ open class ActiveCategoryFragment : HomeFragment() {
                                 println(e.message)
                                 println(foodSnapsot.value)
                             }}
-                        foodRV.adapter = FoodAdapter(foodArrayList, context!!)
+                        foodRV.adapter = FoodAdapter(foodArrayList,this@ActiveCategoryFragment, context!!)
                         //Toast.makeText(context,"Успешно обновлено",Toast.LENGTH_SHORT).show()
                     }
                 }
@@ -79,11 +80,11 @@ open class ActiveCategoryFragment : HomeFragment() {
         _binding = null
     }
 
-    override fun onClick(category: CategoryData) {
+    override fun onCategoryClick(category: CategoryData) {
         getFoodData()
         food_adapter.notifyDataSetChanged()
         foodRV = binding.mainFoodScroll
-        super.onClick(category)
+        super.onCategoryClick(category)
     }
 
 

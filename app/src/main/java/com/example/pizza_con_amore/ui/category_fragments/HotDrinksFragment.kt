@@ -46,7 +46,7 @@ open class HotDrinksFragment : HomeFragment() {
             coffeeArrayList = arrayListOf<FoodData>()
             tea_adapter = HotDrinksAdapter(teaArrayList, context!!)
             coffee_adapter = HotDrinksAdapter(coffeeArrayList, context!!)
-            onClick(CategoryData())
+            onCategoryClick(CategoryData())
             getTeaData()
             getCoffeeData()
         }
@@ -118,14 +118,14 @@ open class HotDrinksFragment : HomeFragment() {
         _binding = null
     }
 
-    override fun onClick(category: CategoryData) {
+    override fun onCategoryClick(category: CategoryData) {
         getTeaData()
         getCoffeeData()
         tea_adapter.notifyDataSetChanged()
         coffee_adapter.notifyDataSetChanged()
         cofeeRV = binding.coffeeScroller
         teaRV = binding.teaScroller
-        super.onClick(category)
+        super.onCategoryClick(category)
     }
 
 

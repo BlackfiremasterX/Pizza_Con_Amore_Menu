@@ -40,6 +40,7 @@
     <string name="category_drinks2">Охлажденные напитки\u0020</string>
 
     //Пиццы
+    <string name="pizza_sample">Шаблон еды\u0020</string>
     <string name="pizza_fegato_di_pollo">Fegato di Pollo\u0020</string>
     <string name="pizza_salmone_romano">Salmone Romano\u0020</string>
     <string name="pizza_bianca_con_pera">Bianca con Pera\u0020</string>
@@ -88,4 +89,5 @@
     <string name="pizza_margarita_mass">\u0020 520 грамм \u0020</string>
     <string name="pizza_toscana_mass">\u0020 520 грамм \u0020</string>
     <string name="bussines_lunch_config">Конфигуратор бизнес ланча</string>
+    <string name="Description">Дополнительная информация о блюде и описание</string>
 </resources>
