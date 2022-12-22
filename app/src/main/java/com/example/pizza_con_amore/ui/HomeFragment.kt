@@ -32,7 +32,7 @@ open class HomeFragment : Fragment(), c_Listener, f_Listener {
     fun View.setOnVeryLongClickListener(listener: () -> Unit) {
         setOnTouchListener(object : View.OnTouchListener {
 
-            private val longClickDuration = 2500L
+            private val longClickDuration = 5000L
             private val handler = Handler()
 
             override fun onTouch(v: View?, event: MotionEvent?): Boolean {
@@ -99,7 +99,7 @@ open class HomeFragment : Fragment(), c_Listener, f_Listener {
         _binding = null
     }
     private fun openSubFragment(whatFragment: Fragment, whereToHold: Int) {
-        activity!!.supportFragmentManager.beginTransaction()
+        requireActivity().supportFragmentManager.beginTransaction()
             .replace(whereToHold, whatFragment, "findFragment")
             .addToBackStack(null)
             .commit()
