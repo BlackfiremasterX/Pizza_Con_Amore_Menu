@@ -36,27 +36,36 @@ const val CATEGORY_TITLE = "categoryTitle"
 const val CATEGORY_IMG = "categoryImg"
 
 //Категории константы путей
+//Основа
 const val BREAKFAST = "01_breakfast"
 const val PIZZA = "02_pizza"
-const val FOCACCIA = "03_focaccia"
-const val LUNCH = "04_lunch"
-const val PASTA = "05_pasta"
+const val PASTA = "03_pasta"
+const val SOUP = "04_soup"
+const val HOT_MEAL = "05_hot_meal"
 const val HOT_SNACKS = "06_hot_snacks"
-const val SALAD = "07_salad"
-const val RAVIOLLI = "08_raviolli"
-const val HOT_MEAL = "09_hot_meal"
-const val ICE_CREAM = "10_ice_cream"
-const val MILKSHAKE = "11_milkshakes"
-const val HOT_DRINKS = "12_hot_drinks"
-const val COLD_DRINKS = "13_cold_drinks"
-const val FREEZING = "14_freezing"
+const val BIG_PIES = "07_big_pies"
+const val CAKES = "08_cakes"
+const val FREEZING_SELL = "09_freezing"
+const val HOT_DRINKS = "10_hot_drinks"
+const val COLD_DRINKS = "11_cold_drinks"
+
+//Побочка
 const val TEA = "tea"
 const val COFFEE = "coffee"
 const val ALCO = "alco"
+
+
+const val JUICE = "juice"
 const val NOALCO = "no_alco"
 const val TODAY = "Сегодня в меню"
 
-
+//Отключено
+const val RAVIOLLI = "08_raviolli"
+const val ICE_CREAM = "10_ice_cream"
+const val FOCACCIA = "03_focaccia"
+const val LUNCH = "04_lunch"
+const val SALAD = "07_salad"
+const val MILKSHAKE = "11_milkshakes"
 
 const val DEFAULT_FOOD_ITEM = "02_salmone"
 
@@ -64,10 +73,10 @@ const val DEFAULT_FOOD_ITEM = "02_salmone"
 lateinit var REF_PCA_BASE_ROOT: DatabaseReference
 var ACTIVE_CATEGORY: String = PIZZA
 var ACTIVE_FOOD: String = DEFAULT_FOOD_ITEM
-var ACTIVE_FOOD_TITLE: String = "123"
-var ACTIVE_FOOD_PRICE: String = "123"
-var ACTIVE_FOOD_MASS: String = "123"
-var ACTIVE_FOOD_DESCRIPTION: String = "123"
+var ACTIVE_FOOD_TITLE: String = "Пустое блюдо"
+var ACTIVE_FOOD_PRICE: String = "Нету"
+var ACTIVE_FOOD_MASS: String = "Нету"
+var ACTIVE_FOOD_DESCRIPTION: String = "Описания пока что нет, но дядя Шеф скоро его обязательно напишет"
 var ACTIVE_FOOD_IMAGE_LINK: String = "123"
 
 
@@ -90,6 +99,7 @@ fun getTeaRef(tea: String) = FirebaseDatabase.getInstance().reference.child(NODE
 fun getCoffeeRef(coffee: String) = FirebaseDatabase.getInstance().reference.child(NODE_CATEGORIES).child(HOT_DRINKS).child(HOT_DRINKS+"_list").child(COFFEE)
 fun getAlcoRef(Alco: String) = FirebaseDatabase.getInstance().reference.child(NODE_CATEGORIES).child(COLD_DRINKS).child(COLD_DRINKS+"_list").child(ALCO)
 fun getNoAlcoRef(NoAlco: String) = FirebaseDatabase.getInstance().reference.child(NODE_CATEGORIES).child(COLD_DRINKS).child(COLD_DRINKS+"_list").child(NOALCO)
+fun getJuiceRef(Juice: String) = FirebaseDatabase.getInstance().reference.child(NODE_CATEGORIES).child(COLD_DRINKS).child(COLD_DRINKS+"_list").child(JUICE)
 
 
 

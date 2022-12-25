@@ -114,48 +114,60 @@ open class HomeFragment : Fragment(), c_Listener, f_Listener {
     override fun onCategoryClick(category: CategoryData) {
 
         when (category.categoryName) {
-            "01_breakfast" -> { ACTIVE_CATEGORY = BREAKFAST;
+            BREAKFAST -> { ACTIVE_CATEGORY = category.categoryName;
                 openSubFragment(BreakfastFragment(), R.id.main_food_menu)
             }
-            "02_pizza" -> {ACTIVE_CATEGORY = PIZZA;
+            PIZZA -> {ACTIVE_CATEGORY = category.categoryName;
                 openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
             }
-            "03_focaccia" -> {ACTIVE_CATEGORY = FOCACCIA;
+            FOCACCIA -> {ACTIVE_CATEGORY = category.categoryName;
                 openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
             }
-            "04_lunch" -> {ACTIVE_CATEGORY = LUNCH;
+            LUNCH -> {ACTIVE_CATEGORY = category.categoryName;
                 openSubFragment(LunchFragment(), R.id.main_food_menu)
             }
-            "05_pasta" -> {ACTIVE_CATEGORY = PASTA;
+            PASTA -> {ACTIVE_CATEGORY = category.categoryName;
                 openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
             }
-            "06_hot_snacks" -> {ACTIVE_CATEGORY = HOT_SNACKS;
+            HOT_SNACKS -> {ACTIVE_CATEGORY = category.categoryName;
                 openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
             }
-            "07_salad" -> {ACTIVE_CATEGORY = SALAD;
+            SALAD -> {ACTIVE_CATEGORY = category.categoryName;
                 openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
             }
-            "08_raviolli" -> {ACTIVE_CATEGORY = RAVIOLLI;
+            RAVIOLLI -> {ACTIVE_CATEGORY = category.categoryName;
                 openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
             }
-            "09_hot_meal" -> {ACTIVE_CATEGORY = HOT_MEAL;
+            HOT_MEAL -> {ACTIVE_CATEGORY = category.categoryName;
                 openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
             }
-            "10_ice_cream" -> {ACTIVE_CATEGORY = ICE_CREAM;
+            ICE_CREAM -> {ACTIVE_CATEGORY = category.categoryName;
                 openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
             }
-            "11_milkshakes" -> {ACTIVE_CATEGORY = MILKSHAKE;
+            MILKSHAKE -> {ACTIVE_CATEGORY = category.categoryName;
                 openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
             }
-            "12_hot_drinks" -> {ACTIVE_CATEGORY = HOT_DRINKS;
+            HOT_DRINKS -> {ACTIVE_CATEGORY = category.categoryName;
                 openSubFragment(HotDrinksFragment(), R.id.main_food_menu)
             }
-            "13_cold_drinks" -> {ACTIVE_CATEGORY = COLD_DRINKS;
+            COLD_DRINKS -> {ACTIVE_CATEGORY = category.categoryName;
                 openSubFragment(ColdDrinksFragment(), R.id.main_food_menu)
             }
-            "14_freezing" -> {ACTIVE_CATEGORY = FREEZING;
+            FREEZING_SELL -> {ACTIVE_CATEGORY = category.categoryName;
                 openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
             }
+            BIG_PIES -> {ACTIVE_CATEGORY = category.categoryName;
+                openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
+            }
+            CAKES -> {ACTIVE_CATEGORY = category.categoryName;
+                openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
+            }
+            SOUP -> {ACTIVE_CATEGORY = category.categoryName;
+                openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
+            }
+//            "02_pizza" -> {ACTIVE_CATEGORY = PIZZA;
+//                openSubFragment(ActiveCategoryFragment(), R.id.main_food_menu)
+//            }
             else -> {ACTIVE_CATEGORY = ACTIVE_CATEGORY }
         }
         livedata.postValue(ACTIVE_CATEGORY)

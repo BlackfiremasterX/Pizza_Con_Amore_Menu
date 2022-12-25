@@ -45,10 +45,10 @@ open class ColdDrinksFragment : HomeFragment() {
             noAlcoArrayList = arrayListOf<FoodData>()
             alcoArrayList = arrayListOf<FoodData>()
             compoundArrayList = arrayListOf<IngredientsData>()
-            alco_drinks_adapter = ColdDrinksAdapter(alcoArrayList,context!!)
-            noalco_drinks_adapter = ColdDrinksAdapter(noAlcoArrayList,context!!)
+            alco_drinks_adapter = ColdDrinksAdapter(alcoArrayList,requireContext())
+            noalco_drinks_adapter = ColdDrinksAdapter(noAlcoArrayList,requireContext())
             onCategoryClick(CategoryData())
-            getAlcoDrinksData()
+            getJuiceData()
             getNoAlcoDrinksData()
 
         }
@@ -83,20 +83,20 @@ open class ColdDrinksFragment : HomeFragment() {
             pca_base.addListenerForSingleValueEvent(getData)
         }
     }
-    private fun getAlcoDrinksData() {
+    private fun getJuiceData() {
         livedata.observe(viewLifecycleOwner){
-            pca_base = getAlcoRef(it)
+            pca_base = getJuiceRef(it)
             var getData = object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     alcoArrayList.clear()
                     if (snapshot.exists()) {
-                        for (alcoSnapsot in snapshot.children) {
+                        for (juiceSnapsot in snapshot.children) {
                             try{
-                                val alco = alcoSnapsot.getValue(FoodData::class.java)
-                                alcoArrayList.add(alco!!) //food?.let { foodArrayList.add(it) }
+                                val juice = juiceSnapsot.getValue(FoodData::class.java)
+                                alcoArrayList.add(juice!!) //food?.let { foodArrayList.add(it) }
                             } catch (e:Exception){
                                 println(e.message)
-                                println(alcoSnapsot.value)
+                                println(juiceSnapsot.value)
                             }}
                         alcoRV.adapter = ColdDrinksAdapter(alcoArrayList, context!!)
                         //Toast.makeText(context,"Успешно обновлено",Toast.LENGTH_SHORT).show()
@@ -118,7 +118,7 @@ open class ColdDrinksFragment : HomeFragment() {
     }
 
     override fun onCategoryClick(category: CategoryData) {
-        getAlcoDrinksData()
+        getJuiceData()
         getNoAlcoDrinksData()
         alco_drinks_adapter.notifyDataSetChanged()
         noalco_drinks_adapter.notifyDataSetChanged()

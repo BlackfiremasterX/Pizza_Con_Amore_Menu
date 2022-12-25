@@ -90,4 +90,6 @@
     <string name="pizza_toscana_mass">\u0020 520 грамм \u0020</string>
     <string name="bussines_lunch_config">Конфигуратор бизнес ланча</string>
     <string name="Description">Дополнительная информация о блюде и описание</string>
+    <string name="juice">Свежевыжатые соки</string>
+    <string name="no_alco">Безалкогольные напитки</string>
 </resources>

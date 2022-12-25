@@ -37,7 +37,7 @@
             android:layout_height="match_parent"
             android:layout_margin="0dp"
             android:background="@color/light_gray"
-            android:text="Безалкогольные напитки"
+            android:text="@string/juice"
             android:textColor="@color/black"
             android:textSize="36sp" />
 
@@ -54,11 +54,11 @@
         android:paddingStart="7dp"
         android:paddingEnd="7dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/middle"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/noalco_title"
+        app:layout_constraintTop_toBottomOf="@+id/alco_title"
         tools:listitem="@layout/cold_drinks_item">
 
     </androidx.recyclerview.widget.RecyclerView>
@@ -73,11 +73,11 @@
         android:paddingStart="7dp"
         android:paddingEnd="7dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/middle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alco_title"
+        app:layout_constraintTop_toBottomOf="@+id/noalco_title"
         tools:listitem="@layout/cold_drinks_item">
 
     </androidx.recyclerview.widget.RecyclerView>
@@ -86,13 +86,13 @@
         android:id="@+id/alco_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="45dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        app:cardCornerRadius="45dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/not_alcohol_scroll">
+        app:layout_constraintTop_toBottomOf="@+id/alcohol_scroll">
 
         <TextView
             style="@style/food_item_style"
@@ -100,7 +100,7 @@
             android:layout_height="match_parent"
             android:layout_margin="0dp"
             android:background="@color/light_gray"
-            android:text="Алкогольные напитки и энергетики"
+            android:text="@string/no_alco"
             android:textColor="@color/black"
             android:textSize="36sp" />
 

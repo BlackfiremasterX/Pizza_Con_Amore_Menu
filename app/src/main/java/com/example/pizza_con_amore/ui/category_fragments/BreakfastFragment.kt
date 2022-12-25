@@ -46,8 +46,8 @@ open class BreakfastFragment : HomeFragment() {
             addonsRV.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             foodArrayList = arrayListOf<FoodData>()
             addonsArrayList = arrayListOf<AddonsData>()
-            base_adapter = FoodAdapter(foodArrayList,this@BreakfastFragment,context!!)
-            addons_adapter = AddonAdapter(addonsArrayList,context!!)
+            base_adapter = FoodAdapter(foodArrayList,this@BreakfastFragment,requireContext())
+            addons_adapter = AddonAdapter(addonsArrayList,requireContext())
 
             getAddonsData()
             onCategoryClick(CategoryData())
