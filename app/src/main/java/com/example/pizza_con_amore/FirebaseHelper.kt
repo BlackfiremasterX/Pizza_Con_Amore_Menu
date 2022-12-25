@@ -77,7 +77,7 @@ var ACTIVE_FOOD_TITLE: String = "Пустое блюдо"
 var ACTIVE_FOOD_PRICE: String = "Нету"
 var ACTIVE_FOOD_MASS: String = "Нету"
 var ACTIVE_FOOD_DESCRIPTION: String = "Описания пока что нет, но дядя Шеф скоро его обязательно напишет"
-var ACTIVE_FOOD_IMAGE_LINK: String = "123"
+var ACTIVE_FOOD_IMAGE_LINK: String = "https://firebasestorage.googleapis.com/v0/b/pizza-con-amore-base.appspot.com/o/img%2Fsoup%2Fuha_antipohmel.jpg?alt=media&token=d6ecfdbc-f4fd-4525-a4f5-b4b4af5930b9"
 
 
 var CURRENT_FOOD_ITEM: String = DEFAULT_FOOD_ITEM

@@ -82,6 +82,7 @@ class FoodAdapter(
                 foodItemTitle.text = item.foodName + "\u0020"
                 foodItemMass.text = "\u0020" + item.foodMass + "\u0020"
                 foodItemPrice.text = "\u0020" + item.foodPrice + "₽\u0020"
+
                 //добавить
 
                 Glide.with(binding.foodItemImg.context)
@@ -98,6 +99,7 @@ class FoodAdapter(
                     ACTIVE_FOOD_PRICE = "\u0020" + item.foodPrice + "₽\u0020"
                     ACTIVE_FOOD_MASS = "\u0020" + item.foodMass + "\u0020"
                     ACTIVE_FOOD_DESCRIPTION = item.foodDescription + "\u0020"
+                    ACTIVE_FOOD_IMAGE_LINK = item.foodImageLink.toString()
 
 
                 }
