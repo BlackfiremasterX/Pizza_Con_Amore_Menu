@@ -22,7 +22,6 @@ lateinit var ingredientArrayList: ArrayList<FirebaseDataStructure.IngredientsDat
 lateinit var addonsArrayList: ArrayList<FirebaseDataStructure.AddonsData>
 
 
-
 //Константы
 const val NODE_CATEGORIES = "Category"
 const val NODE_ADDONS = "Addons"
