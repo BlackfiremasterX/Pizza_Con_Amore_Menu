@@ -181,7 +181,7 @@
 
     <TextView
         android:id="@+id/active_food_description_content"
-        style="@style/food_category_style"
+        style="@style/description_style"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
