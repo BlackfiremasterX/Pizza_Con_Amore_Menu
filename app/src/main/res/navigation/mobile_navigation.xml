@@ -7,24 +7,24 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.pizza_con_amore.ui.HomeFragment"
+        android:name="com.example.pizza_con_amore.presentation.ui.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_restraunt_menu"
-        android:name="com.example.pizza_con_amore.ui.FoodItemDetailsFragment"
+        android:name="com.example.pizza_con_amore.presentation.ui.FoodItemDetailsFragment"
         android:label="@string/menu_favourites"
         tools:layout="@layout/fragment_food_item_details" />
 
     <fragment
         android:id="@+id/nav_admin_add"
-        android:name="com.example.pizza_con_amore.ui.admin_fragments.AdminAddUpdateFragment"
+        android:name="com.example.pizza_con_amore.presentation.ui.admin_fragments.AdminAddUpdateFragment"
         android:label="@string/my_cart"
         tools:layout="@layout/fragment_admin_add_update" />
     <fragment
         android:id="@+id/nav_admin_lunch"
-        android:name="com.example.pizza_con_amore.ui.admin_fragments.AdminLunchConfigFragment"
+        android:name="com.example.pizza_con_amore.presentation.ui.admin_fragments.AdminLunchConfigFragment"
         android:label="fragment_admin_lunch_configurator"
         tools:layout="@layout/fragment_admin_lunch_configurator" />
 </navigation>

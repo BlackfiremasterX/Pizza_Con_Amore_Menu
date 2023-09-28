@@ -7,7 +7,7 @@
     android:focusable="true"
     android:clickable="true"
     android:background="@color/primary_color3"
-    tools:context=".ui.FoodItemDetailsFragment">
+    tools:context=".presentation.ui.FoodItemDetailsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ingredient_list"

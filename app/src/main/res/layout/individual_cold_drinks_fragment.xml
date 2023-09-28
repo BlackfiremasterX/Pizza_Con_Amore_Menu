@@ -9,7 +9,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context=".ui.category_fragments.ActiveCategoryFragment">
+    tools:context=".presentation.ui.category_fragments.ActiveCategoryFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/middle"

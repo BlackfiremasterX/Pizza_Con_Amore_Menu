@@ -9,7 +9,7 @@
     android:layout_height="match_parent"
     android:background="@color/primary_color3"
 
-    tools:context=".ui.category_fragments.BreakfastFragment">
+    tools:context=".presentation.ui.category_fragments.BreakfastFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/breakfast_scroller"

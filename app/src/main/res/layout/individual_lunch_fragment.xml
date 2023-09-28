@@ -9,7 +9,7 @@
     android:layout_height="match_parent"
     android:background="@color/primary_color3"
 
-    tools:context=".ui.category_fragments.LunchFragment">
+    tools:context=".presentation.ui.category_fragments.LunchFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/percent_down"

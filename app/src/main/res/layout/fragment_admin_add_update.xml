@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:clickable="true"
     android:focusable="true"
-    tools:context=".ui.admin_fragments.AdminAddUpdateFragment">
+    tools:context=".presentation.ui.admin_fragments.AdminAddUpdateFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
